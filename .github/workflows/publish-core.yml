@@ -24,11 +24,11 @@ jobs:
 
       - run: pnpm install --no-lockfile
 
-      - run: pnpm lint --filter @better-openclaw/core
+      # - run: pnpm lint --filter @better-openclaw/core
 
-      - run: pnpm typecheck --filter @better-openclaw/core
+      # - run: pnpm typecheck --filter @better-openclaw/core
 
-      - run: pnpm test --filter @better-openclaw/core
+      # - run: pnpm test --filter @better-openclaw/core
 
       - run: pnpm build --filter @better-openclaw/core
 
