@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      - run: pnpm install
+      - run: pnpm install --no-lockfile
       - run: pnpm lint
 
   typecheck:
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      - run: pnpm install
+      - run: pnpm install --no-lockfile
       - run: pnpm typecheck
 
   test:
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      - run: pnpm install
+      - run: pnpm install --no-lockfile
       - run: pnpm test
 
   build:
@@ -53,5 +53,5 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      - run: pnpm install
+      - run: pnpm install --no-lockfile
       - run: pnpm build
