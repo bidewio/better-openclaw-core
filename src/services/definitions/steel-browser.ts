@@ -1,0 +1,70 @@
+import type { ServiceDefinition } from "../../types.js";
+
+export const steelBrowserDefinition: ServiceDefinition = {
+	id: "steel-browser",
+	name: "Steel Browser",
+	description:
+		"Open-source browser API for AI agents. Full session management, anti-detection, proxy support, CAPTCHA solving, and compatibility with Puppeteer, Playwright, and Selenium.",
+	category: "browser",
+	icon: "🔥",
+	image: "ghcr.io/steel-dev/steel-browser",
+	imageTag: "latest",
+	ports: [
+		{ host: 3070, container: 3000, description: "Steel Browser REST API", exposed: true },
+		{ host: 9223, container: 9223, description: "CDP debugger", exposed: true },
+	],
+	volumes: [],
+	environment: [
+		{
+			key: "STEEL_LOG_LEVEL",
+			defaultValue: "info",
+			secret: false,
+			description: "Steel Browser log level",
+			required: false,
+		},
+	],
+	healthcheck: {
+		test: "wget -q --spider http://localhost:3000/health || exit 1",
+		interval: "30s",
+		timeout: "10s",
+		retries: 3,
+		startPeriod: "15s",
+	},
+	dependsOn: [],
+	restartPolicy: "unless-stopped",
+	networks: ["openclaw-network"],
+	skills: [{ skillId: "steel-browse", autoInstall: true }],
+	openclawEnvVars: [
+		{
+			key: "STEEL_HOST",
+			defaultValue: "steel-browser",
+			secret: false,
+			description: "Steel Browser hostname for OpenClaw",
+			required: true,
+		},
+		{
+			key: "STEEL_PORT",
+			defaultValue: "3070",
+			secret: false,
+			description: "Steel Browser API port for OpenClaw",
+			required: true,
+		},
+	],
+	docsUrl: "https://docs.steel.dev/",
+	tags: [
+		"browser-api",
+		"ai-agents",
+		"anti-detection",
+		"sessions",
+		"puppeteer",
+		"playwright",
+		"selenium",
+		"captcha",
+	],
+	maturity: "stable",
+	requires: [],
+	recommends: [],
+	conflictsWith: [],
+	minMemoryMB: 512,
+	gpuRequired: false,
+};
