@@ -4,6 +4,7 @@
   "private": false,
   "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and more",
   "type": "module",
+  "packageManager": "pnpm@9.15.4",
   "sideEffects": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
