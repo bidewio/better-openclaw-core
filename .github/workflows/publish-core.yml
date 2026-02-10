@@ -33,6 +33,6 @@ jobs:
       - run: pnpm build
 
       - name: Publish Core to npm
-        run: pnpm publish
+        run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
