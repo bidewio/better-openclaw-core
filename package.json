@@ -1,6 +1,6 @@
 {
   "name": "@better-openclaw/core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and more",
   "type": "module",
@@ -15,6 +15,7 @@
     }
   },
   "scripts": {
+    "prepublishOnly": "pnpm run build",
     "build": "tsc",
     "dev": "tsc --watch",
     "test": "vitest run",
