@@ -1,6 +1,6 @@
 {
   "name": "@better-openclaw/core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and more",
   "type": "module",
@@ -9,14 +9,21 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "default": "./dist/index.mjs"
+        },
+        "./*": {
+            "types": "./dist/*.d.ts",
+            "import": "./dist/*.mjs",
+            "default": "./dist/*.mjs"
+        }
+    },
   "scripts": {
-    "prepublishOnly": "pnpm run build",
-    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "build": "tsdown",
+    "build:tsc": "tsc",
     "dev": "tsc --watch",
     "test": "vitest run",
     "test:unit": "vitest run",
@@ -33,6 +40,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.2.2",
+    "tsdown": "^0.19.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   }
