@@ -30,9 +30,9 @@ jobs:
 
       # - run: pnpm test --filter @better-openclaw/core
 
-      - run: pnpm build --filter @better-openclaw/core
+      - run: pnpm build
 
       - name: Publish Core to npm
-        run: pnpm publish --filter @better-openclaw/core --no-git-checks --access public
+        run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
