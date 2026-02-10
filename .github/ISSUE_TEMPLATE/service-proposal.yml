@@ -1,0 +1,57 @@
+name: Service Proposal
+description: Propose a new service or tool for better-openclaw
+title: "[Service] "
+labels: ["service-proposal"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Service Name
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Docker Image
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - AI / Local Models
+        - AI Platforms
+        - Automation
+        - Browser Automation
+        - Coding Agents
+        - Communication
+        - Database
+        - Dev Tools
+        - Knowledge
+        - Media
+        - Monitoring
+        - Proxy
+        - Search
+        - Social Media
+        - Storage
+        - Vector DB
+        - Analytics
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website URL
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should this be included?
+    validations:
+      required: true

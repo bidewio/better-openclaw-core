@@ -1,0 +1,32 @@
+name: Stack Submission
+description: Submit your better-openclaw stack to the showcase
+title: "[Showcase] "
+labels: ["showcase"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project Name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: GitHub URL
+    validations:
+      required: true
+  - type: input
+    id: screenshot
+    attributes:
+      label: Screenshot URL
+  - type: input
+    id: services
+    attributes:
+      label: Services Used
+      description: Comma-separated list of service IDs
