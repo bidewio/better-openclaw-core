@@ -1,39 +1,37 @@
 name: Publish-Core
 
 on:
-  release:
-    types: [published]
-
-permissions:
-  contents: read
-  id-token: write
+    release:
+        types: [published]
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    publish-npm:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "20.x"
+                  registry-url: "https://registry.npmjs.org"
 
-      - uses: pnpm/action-setup@v4
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 9
+                  run_install: false
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-          registry-url: "https://registry.npmjs.org"
+            - name: Install dependencies
+              run: pnpm install
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: pnpm install --no-lockfile
-
-      # - run: pnpm lint --filter @better-openclaw/core
-
-      # - run: pnpm typecheck --filter @better-openclaw/core
-
-      # - run: pnpm test --filter @better-openclaw/core
-
-      - run: pnpm build
-
-      - name: Publish Core to npm
-        run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Build and Publish Auth Typescript SDK
+              run: |
+                  pnpm --filter @better-openclaw/core build
+                  npm publish --access=public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
