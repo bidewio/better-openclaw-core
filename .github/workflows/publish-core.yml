@@ -28,7 +28,7 @@ jobs:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-            - name: Build and Publish Auth Typescript SDK
+            - name: Build and Publish Core Typescript Packages
               run: |
                   pnpm --filter @better-openclaw/core build
                   npm publish --access=public

@@ -63,6 +63,8 @@ export const tailscaleDefinition: ServiceDefinition = {
 	recommends: [],
 	conflictsWith: [],
 	mandatory: true,
+	removalWarning:
+		"Tailscale provides secure VPN access to your stack via WireGuard. Without it, services will be directly exposed to the network and accessible without authentication.",
 
 	minMemoryMB: 64,
 	gpuRequired: false,

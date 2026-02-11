@@ -6,6 +6,8 @@ export { caddyDefinition } from "./caddy.js";
 export { chromadbDefinition } from "./chromadb.js";
 export { claudeCodeDefinition } from "./claude-code.js";
 export { codeServerDefinition } from "./code-server.js";
+export { convexDefinition } from "./convex.js";
+export { convexDashboardDefinition } from "./convex-dashboard.js";
 export { codexDefinition } from "./codex.js";
 export { coolifyDefinition } from "./coolify.js";
 export { difyDefinition } from "./dify.js";
@@ -30,6 +32,7 @@ export { matomoDefinition } from "./matomo.js";
 export { matrixSynapseDefinition } from "./matrix-synapse.js";
 export { mattermostDefinition } from "./mattermost.js";
 export { meilisearchDefinition } from "./meilisearch.js";
+export { missionControlDefinition } from "./mission-control.js";
 export { minioDefinition } from "./minio.js";
 export { mixpostDefinition } from "./mixpost.js";
 export { motionCanvasDefinition } from "./motion-canvas.js";
@@ -58,6 +61,7 @@ export { tailscaleDefinition } from "./tailscale.js";
 export { temporalDefinition } from "./temporal.js";
 export { traefikDefinition } from "./traefik.js";
 export { umamiDefinition } from "./umami.js";
+export { usesendDefinition } from "./usesend.js";
 export { uptimeKumaDefinition } from "./uptime-kuma.js";
 export { valkeyDefinition } from "./valkey.js";
 export { watchtowerDefinition } from "./watchtower.js";
@@ -73,6 +77,8 @@ import { caddyDefinition } from "./caddy.js";
 import { chromadbDefinition } from "./chromadb.js";
 import { claudeCodeDefinition } from "./claude-code.js";
 import { codeServerDefinition } from "./code-server.js";
+import { convexDefinition } from "./convex.js";
+import { convexDashboardDefinition } from "./convex-dashboard.js";
 import { codexDefinition } from "./codex.js";
 import { coolifyDefinition } from "./coolify.js";
 import { difyDefinition } from "./dify.js";
@@ -97,6 +103,7 @@ import { matomoDefinition } from "./matomo.js";
 import { matrixSynapseDefinition } from "./matrix-synapse.js";
 import { mattermostDefinition } from "./mattermost.js";
 import { meilisearchDefinition } from "./meilisearch.js";
+import { missionControlDefinition } from "./mission-control.js";
 import { minioDefinition } from "./minio.js";
 import { mixpostDefinition } from "./mixpost.js";
 import { motionCanvasDefinition } from "./motion-canvas.js";
@@ -125,6 +132,7 @@ import { tailscaleDefinition } from "./tailscale.js";
 import { temporalDefinition } from "./temporal.js";
 import { traefikDefinition } from "./traefik.js";
 import { umamiDefinition } from "./umami.js";
+import { usesendDefinition } from "./usesend.js";
 import { uptimeKumaDefinition } from "./uptime-kuma.js";
 import { valkeyDefinition } from "./valkey.js";
 import { watchtowerDefinition } from "./watchtower.js";
@@ -178,6 +186,8 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	watchtowerDefinition,
 	dozzleDefinition,
 	beszelDefinition,
+	convexDefinition,
+	convexDashboardDefinition,
 	claudeCodeDefinition,
 	opencodeDefinition,
 	codexDefinition,
@@ -187,6 +197,8 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	mixpostDefinition,
 	matomoDefinition,
 	umamiDefinition,
+	usesendDefinition,
+	missionControlDefinition,
 	openpanelDefinition,
 	lightpandaDefinition,
 	steelBrowserDefinition,

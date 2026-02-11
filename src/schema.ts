@@ -41,7 +41,7 @@ export const RestartPolicySchema = z.enum(["unless-stopped", "always", "on-failu
 
 export const ProxyTypeSchema = z.enum(["none", "caddy", "traefik"]);
 
-export const DeploymentTargetSchema = z.enum(["local", "vps", "homelab"]);
+export const DeploymentTargetSchema = z.enum(["local", "vps", "homelab", "clawexa"]);
 
 export const OutputFormatSchema = z.enum(["directory", "tar", "zip"]);
 
@@ -155,6 +155,7 @@ export const ServiceDefinitionSchema = z.object({
 	recommends: z.array(z.string()).default([]),
 	conflictsWith: z.array(z.string()).default([]),
 	mandatory: z.boolean().default(false).optional(),
+	removalWarning: z.string().optional(),
 
 	// Platform Constraints
 	platforms: z.array(PlatformSchema).optional(),
