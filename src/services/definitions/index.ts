@@ -6,10 +6,12 @@ export { caddyDefinition } from "./caddy.js";
 export { chromadbDefinition } from "./chromadb.js";
 export { claudeCodeDefinition } from "./claude-code.js";
 export { codeServerDefinition } from "./code-server.js";
+export { comfyuiDefinition } from "./comfyui.js";
 export { convexDefinition } from "./convex.js";
 export { convexDashboardDefinition } from "./convex-dashboard.js";
 export { codexDefinition } from "./codex.js";
 export { coolifyDefinition } from "./coolify.js";
+export { desktopEnvironmentDefinition } from "./desktop-environment.js";
 export { difyDefinition } from "./dify.js";
 export { docsgptDefinition } from "./docsgpt.js";
 export { dokployDefinition } from "./dokploy.js";
@@ -57,6 +59,7 @@ export { rocketchatDefinition } from "./rocketchat.js";
 export { searxngDefinition } from "./searxng.js";
 export { stableDiffusionDefinition } from "./stable-diffusion.js";
 export { steelBrowserDefinition } from "./steel-browser.js";
+export { streamGatewayDefinition } from "./stream-gateway.js";
 export { tailscaleDefinition } from "./tailscale.js";
 export { temporalDefinition } from "./temporal.js";
 export { traefikDefinition } from "./traefik.js";
@@ -77,10 +80,12 @@ import { caddyDefinition } from "./caddy.js";
 import { chromadbDefinition } from "./chromadb.js";
 import { claudeCodeDefinition } from "./claude-code.js";
 import { codeServerDefinition } from "./code-server.js";
+import { comfyuiDefinition } from "./comfyui.js";
 import { convexDefinition } from "./convex.js";
 import { convexDashboardDefinition } from "./convex-dashboard.js";
 import { codexDefinition } from "./codex.js";
 import { coolifyDefinition } from "./coolify.js";
+import { desktopEnvironmentDefinition } from "./desktop-environment.js";
 import { difyDefinition } from "./dify.js";
 import { docsgptDefinition } from "./docsgpt.js";
 import { dokployDefinition } from "./dokploy.js";
@@ -128,6 +133,7 @@ import { rocketchatDefinition } from "./rocketchat.js";
 import { searxngDefinition } from "./searxng.js";
 import { stableDiffusionDefinition } from "./stable-diffusion.js";
 import { steelBrowserDefinition } from "./steel-browser.js";
+import { streamGatewayDefinition } from "./stream-gateway.js";
 import { tailscaleDefinition } from "./tailscale.js";
 import { temporalDefinition } from "./temporal.js";
 import { traefikDefinition } from "./traefik.js";
@@ -173,6 +179,7 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	rocketchatDefinition,
 	mattermostDefinition,
 	stableDiffusionDefinition,
+	comfyuiDefinition,
 	playwrightServerDefinition,
 	openWebuiDefinition,
 	librechatDefinition,
@@ -209,4 +216,6 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	lasuiteMeetBackendDefinition,
 	lasuiteMeetFrontendDefinition,
 	lasuiteMeetAgentsDefinition,
+	desktopEnvironmentDefinition,
+	streamGatewayDefinition,
 ];

@@ -120,4 +120,6 @@ export const SERVICE_CATEGORIES: CategoryInfo[] = [
 	{ id: "browser", name: "Browser Automation", icon: "🌐" },
 	{ id: "search", name: "Search", icon: "🔍" },
 	{ id: "communication", name: "Notifications", icon: "🔔" },
+	{ id: "desktop", name: "Desktop Environment", icon: "🖥️" },
+	{ id: "streaming", name: "Streaming & Relay", icon: "📺" },
 ];
