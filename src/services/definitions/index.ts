@@ -3,6 +3,7 @@ export { appflowyDefinition } from "./appflowy.js";
 export { beszelDefinition } from "./beszel.js";
 export { browserlessDefinition } from "./browserless.js";
 export { caddyDefinition } from "./caddy.js";
+export { calComDefinition } from "./cal-com.js";
 export { chromadbDefinition } from "./chromadb.js";
 export { claudeCodeDefinition } from "./claude-code.js";
 export { codeServerDefinition } from "./code-server.js";
@@ -39,6 +40,7 @@ export { minioDefinition } from "./minio.js";
 export { mixpostDefinition } from "./mixpost.js";
 export { motionCanvasDefinition } from "./motion-canvas.js";
 export { n8nDefinition } from "./n8n.js";
+export { neo4jDefinition } from "./neo4j.js";
 export { nocodbDefinition } from "./nocodb.js";
 export { ntfyDefinition } from "./ntfy.js";
 export { ollamaDefinition } from "./ollama.js";
@@ -77,6 +79,7 @@ import { appflowyDefinition } from "./appflowy.js";
 import { beszelDefinition } from "./beszel.js";
 import { browserlessDefinition } from "./browserless.js";
 import { caddyDefinition } from "./caddy.js";
+import { calComDefinition } from "./cal-com.js";
 import { chromadbDefinition } from "./chromadb.js";
 import { claudeCodeDefinition } from "./claude-code.js";
 import { codeServerDefinition } from "./code-server.js";
@@ -113,6 +116,7 @@ import { minioDefinition } from "./minio.js";
 import { mixpostDefinition } from "./mixpost.js";
 import { motionCanvasDefinition } from "./motion-canvas.js";
 import { n8nDefinition } from "./n8n.js";
+import { neo4jDefinition } from "./neo4j.js";
 import { nocodbDefinition } from "./nocodb.js";
 import { ntfyDefinition } from "./ntfy.js";
 import { ollamaDefinition } from "./ollama.js";
@@ -218,4 +222,6 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	lasuiteMeetAgentsDefinition,
 	desktopEnvironmentDefinition,
 	streamGatewayDefinition,
+	neo4jDefinition,
+	calComDefinition,
 ];

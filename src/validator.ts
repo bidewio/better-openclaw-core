@@ -93,6 +93,22 @@ function checkEnvCompleteness(
 					message: `Secret "${envVar.key}" for "${svc.definition.name}" needs to be configured manually`,
 				});
 			}
+			if (envVar.validation && envVar.defaultValue) {
+				try {
+					const regex = new RegExp(envVar.validation);
+					if (!regex.test(envVar.defaultValue)) {
+						warnings.push({
+							type: "env_validation",
+							message: `Environment variable "${envVar.key}" for "${svc.definition.name}" default value does not match validation pattern: ${envVar.validation}`,
+						});
+					}
+				} catch {
+					warnings.push({
+						type: "env_validation",
+						message: `Environment variable "${envVar.key}" for "${svc.definition.name}" has invalid validation regex: ${envVar.validation}`,
+					});
+				}
+			}
 		}
 	}
 }

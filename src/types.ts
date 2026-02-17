@@ -58,7 +58,10 @@ export type SkillPack = z.infer<typeof SkillPackSchema>;
 export type Preset = z.infer<typeof PresetSchema>;
 
 export type GenerationInput = z.infer<typeof GenerationInputSchema>;
-export type ComposeOptions = z.infer<typeof ComposeOptionsSchema>;
+export type ComposeOptions = z.infer<typeof ComposeOptionsSchema> & {
+	/** Dynamic Traefik labels per service, computed by the Traefik generator. */
+	traefikLabels?: Map<string, Record<string, string>>;
+};
 export type ResolvedService = z.infer<typeof ResolvedServiceSchema>;
 export type AddedDependency = z.infer<typeof AddedDependencySchema>;
 export type Warning = z.infer<typeof WarningSchema>;
@@ -78,6 +81,7 @@ export interface ResolverInput {
 	gpu?: boolean;
 	platform?: Platform;
 	monitoring?: boolean;
+	memoryThresholds?: { info: number; warning: number; critical: number };
 }
 
 export interface GeneratedFiles {

@@ -14,14 +14,21 @@ export function getImageReference(serviceId: string): string | undefined {
 	return `${svc.image}:${svc.imageTag}`;
 }
 
-/** Pin all service image tags in a resolved output (returns a copy) */
+/** Pin all service image tags to the registry-defined versions (returns a copy) */
 export function pinImageTags(resolved: ResolverOutput): ResolverOutput {
 	return {
 		...resolved,
-		services: resolved.services.map((s) => ({
-			...s,
-			definition: { ...s.definition },
-		})),
+		services: resolved.services.map((s) => {
+			const registryDef = getServiceById(s.definition.id);
+			const pinnedTag = registryDef?.imageTag ?? s.definition.imageTag;
+			return {
+				...s,
+				definition: {
+					...s.definition,
+					imageTag: pinnedTag,
+				},
+			};
+		}),
 	};
 }
 

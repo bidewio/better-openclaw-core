@@ -164,6 +164,8 @@ exports[`compose snapshot tests > devops preset (n8n + postgresql + redis + moni
       N8N_HOST: n8n
       N8N_PORT: "5678"
       N8N_WEBHOOK_URL: http://n8n:5678/
+      GRAFANA_HOST: grafana
+      GRAFANA_PORT: "3000"
     volumes:
       - \${OPENCLAW_CONFIG_DIR:-./openclaw/config}:/home/node/.openclaw
       - \${OPENCLAW_WORKSPACE_DIR:-./openclaw/workspace}:/home/node/.openclaw/workspace
@@ -382,6 +384,8 @@ exports[`compose snapshot tests > full preset (many services) 1`] = `
       BROWSERLESS_HOST: browserless
       BROWSERLESS_PORT: "3000"
       BROWSERLESS_TOKEN: \${BROWSERLESS_TOKEN}
+      CADDY_HOST: caddy
+      CADDY_HTTP_PORT: "80"
       FFMPEG_SHARED_DIR: /home/node/.openclaw/workspace/media
       GOTIFY_HOST: gotify
       GOTIFY_PORT: "8080"
@@ -410,6 +414,8 @@ exports[`compose snapshot tests > full preset (many services) 1`] = `
       N8N_HOST: n8n
       N8N_PORT: "5678"
       N8N_WEBHOOK_URL: http://n8n:5678/
+      GRAFANA_HOST: grafana
+      GRAFANA_PORT: "3000"
     volumes:
       - \${OPENCLAW_CONFIG_DIR:-./openclaw/config}:/home/node/.openclaw
       - \${OPENCLAW_WORKSPACE_DIR:-./openclaw/workspace}:/home/node/.openclaw/workspace
@@ -433,7 +439,7 @@ exports[`compose snapshot tests > full preset (many services) 1`] = `
       browserless:
         condition: service_healthy
       caddy:
-        condition: service_started
+        condition: service_healthy
       meilisearch:
         condition: service_healthy
       minio:
@@ -474,6 +480,14 @@ exports[`compose snapshot tests > full preset (many services) 1`] = `
     volumes:
       - caddy-data:/data
       - caddy-config:/config
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q --spider http://localhost:80 || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
     restart: unless-stopped
     networks:
       - openclaw-network

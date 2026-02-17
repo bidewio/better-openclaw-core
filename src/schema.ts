@@ -201,6 +201,7 @@ export const PresetSchema = z.object({
 // ─── Generation Input ───────────────────────────────────────────────────────
 
 export const GenerationInputSchema = z.object({
+	configVersion: z.number().int().min(1).optional(),
 	projectName: z
 		.string()
 		.min(1)

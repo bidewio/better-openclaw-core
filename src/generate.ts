@@ -7,6 +7,7 @@ import { composeMultiFile } from "./composer.js";
 import { generateBareMetalInstall } from "./generators/bare-metal-install.js";
 import { generateCaddyfile } from "./generators/caddy.js";
 import { generateEnvFiles } from "./generators/env.js";
+import { generateTraefikConfig } from "./generators/traefik.js";
 import { generateGrafanaConfig, generateGrafanaDashboard } from "./generators/grafana.js";
 import { generateN8nWorkflows } from "./generators/n8n-workflows.js";
 import { generateNativeInstallScripts } from "./generators/native-services.js";
@@ -15,6 +16,7 @@ import { generatePrometheusConfig } from "./generators/prometheus.js";
 import { generateReadme } from "./generators/readme.js";
 import { generateScripts } from "./generators/scripts.js";
 import { generateSkillFiles } from "./generators/skills.js";
+import { migrateConfig } from "./migrations.js";
 import { resolve } from "./resolver.js";
 import type {
 	GeneratedFiles,
@@ -23,6 +25,7 @@ import type {
 	Platform,
 	ResolverInput,
 } from "./types.js";
+import { StackConfigError, ValidationError } from "./errors.js";
 import { validate } from "./validator.js";
 
 /** Resolver/compose only support linux image platforms; normalize for bare-metal (windows/macos). */
@@ -35,7 +38,10 @@ function getComposePlatform(platform: Platform): "linux/amd64" | "linux/arm64" {
  * Main orchestration function: takes generation input, resolves dependencies,
  * generates all files, validates, and returns the complete file tree.
  */
-export function generate(input: GenerationInput): GenerationResult {
+export function generate(rawInput: GenerationInput): GenerationResult {
+	// Apply config migrations if needed
+	const input = migrateConfig(rawInput as Record<string, unknown>) as GenerationInput;
+
 	const composePlatform = getComposePlatform(input.platform);
 
 	// 1. Resolve dependencies
@@ -50,7 +56,7 @@ export function generate(input: GenerationInput): GenerationResult {
 	const resolved = resolve(resolverInput);
 
 	if (!resolved.isValid) {
-		throw new Error(
+		throw new StackConfigError(
 			`Invalid stack configuration: ${resolved.errors.map((e) => e.message).join("; ")}`,
 		);
 	}
@@ -72,6 +78,12 @@ export function generate(input: GenerationInput): GenerationResult {
 	}
 
 	// 2. Generate Docker Compose YAML (multi-file)
+	// Compute Traefik labels before composing (labels get injected into docker-compose services)
+	let traefikOutput: ReturnType<typeof generateTraefikConfig> | undefined;
+	if (input.proxy === "traefik" && input.domain) {
+		traefikOutput = generateTraefikConfig(resolvedForCompose, input.domain);
+	}
+
 	const composeOptions = {
 		projectName: input.projectName,
 		proxy: input.proxy,
@@ -81,6 +93,7 @@ export function generate(input: GenerationInput): GenerationResult {
 		deployment: input.deployment,
 		openclawVersion: input.openclawVersion,
 		bareMetalNativeHost: isBareMetal && nativeIds.size > 0,
+		traefikLabels: traefikOutput?.serviceLabels,
 	};
 	const composeResult = composeMultiFile(resolvedForCompose, composeOptions);
 
@@ -90,7 +103,7 @@ export function generate(input: GenerationInput): GenerationResult {
 		generateSecrets: input.generateSecrets,
 	});
 	if (!validation.valid) {
-		throw new Error(`Validation failed: ${validation.errors.map((e) => e.message).join("; ")}`);
+		throw new ValidationError(`Validation failed: ${validation.errors.map((e) => e.message).join("; ")}`);
 	}
 
 	// 4. Generate all files
@@ -158,6 +171,11 @@ export function generate(input: GenerationInput): GenerationResult {
 		files["caddy/Caddyfile"] = generateCaddyfile(resolved, input.domain);
 	}
 
+	// Traefik config (labels are already injected via composeOptions.traefikLabels)
+	if (traefikOutput) {
+		files["traefik/traefik.yml"] = traefikOutput.staticConfig;
+	}
+
 	// Prometheus config
 	const hasPrometheus = resolved.services.some((s) => s.definition.id === "prometheus");
 	if (hasPrometheus) {
@@ -223,7 +241,7 @@ export function generate(input: GenerationInput): GenerationResult {
 	};
 }
 
-function generateServicesDoc(resolved: import("./types.js").ResolverOutput): string {
+export function generateServicesDoc(resolved: import("./types.js").ResolverOutput): string {
 	const lines: string[] = [
 		"# Service Reference",
 		"",

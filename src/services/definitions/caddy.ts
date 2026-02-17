@@ -37,12 +37,34 @@ export const caddyDefinition: ServiceDefinition = {
 		},
 	],
 	environment: [],
+	healthcheck: {
+		test: "wget -q --spider http://localhost:80 || exit 1",
+		interval: "30s",
+		timeout: "10s",
+		retries: 3,
+		startPeriod: "5s",
+	},
 	dependsOn: [],
 	restartPolicy: "unless-stopped",
 	networks: ["openclaw-network"],
 
 	skills: [],
-	openclawEnvVars: [],
+	openclawEnvVars: [
+		{
+			key: "CADDY_HOST",
+			defaultValue: "caddy",
+			secret: false,
+			description: "Caddy reverse proxy hostname",
+			required: false,
+		},
+		{
+			key: "CADDY_HTTP_PORT",
+			defaultValue: "80",
+			secret: false,
+			description: "Caddy HTTP port",
+			required: false,
+		},
+	],
 
 	docsUrl: "https://caddyserver.com/docs/",
 	tags: ["reverse-proxy", "auto-https", "ssl"],

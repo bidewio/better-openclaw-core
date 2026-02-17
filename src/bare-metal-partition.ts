@@ -7,6 +7,7 @@ export function platformToNativePlatform(platform: Platform): NativePlatform {
 	if (platform.startsWith("linux/")) return "linux";
 	if (platform.startsWith("windows/")) return "windows";
 	if (platform.startsWith("macos/")) return "macos";
+	console.warn(`Unknown platform prefix in "${platform}", defaulting to linux`);
 	return "linux";
 }
 

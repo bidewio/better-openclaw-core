@@ -10,6 +10,18 @@ import type {
 	Warning,
 } from "./types.js";
 
+export interface MemoryThresholds {
+	info: number;
+	warning: number;
+	critical: number;
+}
+
+const DEFAULT_MEMORY_THRESHOLDS: MemoryThresholds = {
+	info: 2048,
+	warning: 4096,
+	critical: 8192,
+};
+
 /**
  * Resolves user selections into a complete, valid service list.
  *
@@ -128,6 +140,27 @@ export function resolve(input: ResolverInput): ResolverOutput {
 		}
 	}
 
+	if (iteration >= maxIterations) {
+		warnings.push({
+			type: "resolution",
+			message: `Dependency resolution reached maximum iterations (${maxIterations}). Some transitive dependencies may not be fully resolved.`,
+		});
+	}
+
+	// Check recommended services
+	for (const id of serviceIds) {
+		const def = getServiceById(id);
+		if (!def) continue;
+		for (const recId of def.recommends) {
+			if (!serviceIds.has(recId) && getServiceById(recId)) {
+				warnings.push({
+					type: "recommendation",
+					message: `${def.name} recommends "${recId}" for enhanced functionality`,
+				});
+			}
+		}
+	}
+
 	// 3. Detect conflicts
 	const resolvedDefs: ServiceDefinition[] = [];
 	for (const id of serviceIds) {
@@ -178,17 +211,18 @@ export function resolve(input: ResolverInput): ResolverOutput {
 	}
 
 	// Memory warnings
-	if (estimatedMemoryMB > 8192) {
+	const thresholds = input.memoryThresholds ?? DEFAULT_MEMORY_THRESHOLDS;
+	if (estimatedMemoryMB > thresholds.critical) {
 		warnings.push({
 			type: "memory",
 			message: `Estimated ${(estimatedMemoryMB / 1024).toFixed(1)}GB RAM required. Ensure your server has sufficient resources.`,
 		});
-	} else if (estimatedMemoryMB > 4096) {
+	} else if (estimatedMemoryMB > thresholds.warning) {
 		warnings.push({
 			type: "memory",
 			message: `Estimated ${(estimatedMemoryMB / 1024).toFixed(1)}GB RAM required. A server with at least 8GB RAM is recommended.`,
 		});
-	} else if (estimatedMemoryMB > 2048) {
+	} else if (estimatedMemoryMB > thresholds.info) {
 		warnings.push({
 			type: "memory",
 			message: `Estimated ${(estimatedMemoryMB / 1024).toFixed(1)}GB RAM required.`,

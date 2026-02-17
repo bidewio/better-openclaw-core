@@ -8,7 +8,7 @@ export {
 } from "./bare-metal-partition.js";
 export type { ComposeResult } from "./composer.js";
 export { compose, composeMultiFile } from "./composer.js";
-export { generate } from "./generate.js";
+export { generate, generateServicesDoc } from "./generate.js";
 export { generateCaddyfile } from "./generators/caddy.js";
 export type { EnvVarGroup } from "./generators/env.js";
 export { generateEnvFiles, getStructuredEnvVars } from "./generators/env.js";
@@ -108,6 +108,12 @@ export type {
 } from "./types.js";
 export { SERVICE_CATEGORIES } from "./types.js";
 export { validate } from "./validator.js";
+
+// ─── Config Migrations ──────────────────────────────────────────────────────
+export { migrateConfig, needsMigration, CURRENT_CONFIG_VERSION } from "./migrations.js";
+
+// ─── Errors ─────────────────────────────────────────────────────────────────
+export { StackConfigError, ValidationError } from "./errors.js";
 
 // ─── Version Manager ────────────────────────────────────────────────────────
 export {

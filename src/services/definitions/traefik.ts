@@ -38,8 +38,6 @@ export const traefikDefinition: ServiceDefinition = {
 		},
 	],
 	environment: [],
-	command:
-		"--api.dashboard=true --providers.docker=true --entrypoints.web.address=:80 --entrypoints.websecure.address=:443",
 	dependsOn: [],
 	restartPolicy: "unless-stopped",
 	networks: ["openclaw-network"],

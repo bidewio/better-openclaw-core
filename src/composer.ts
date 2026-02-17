@@ -100,6 +100,12 @@ function buildGatewayServices(
 		],
 	};
 
+	// Traefik labels for the gateway
+	const gwTraefikLabels = options.traefikLabels?.get("openclaw-gateway");
+	if (gwTraefikLabels) {
+		gateway.labels = gwTraefikLabels;
+	}
+
 	if (options.bareMetalNativeHost) {
 		gateway.extra_hosts = ["host.docker.internal:host-gateway"];
 	}
@@ -198,7 +204,22 @@ function buildCompanionService(
 
 	if (def.command) svc.command = def.command;
 	if (def.entrypoint) svc.entrypoint = def.entrypoint;
-	if (def.labels && Object.keys(def.labels).length > 0) svc.labels = def.labels;
+
+	// Labels: merge static definition labels with dynamic Traefik labels
+	const mergedLabels: Record<string, string> = {};
+	if (def.labels) Object.assign(mergedLabels, def.labels);
+	const traefikLabels = options.traefikLabels?.get(def.id);
+	if (traefikLabels) Object.assign(mergedLabels, traefikLabels);
+	if (Object.keys(mergedLabels).length > 0) svc.labels = mergedLabels;
+
+	// Traefik: bind-mount static config and Docker socket
+	if (def.id === "traefik" && options.traefikLabels) {
+		if (!svc.volumes) svc.volumes = [];
+		(svc.volumes as string[]).push(
+			"./traefik/traefik.yml:/etc/traefik/traefik.yml:ro",
+			"/var/run/docker.sock:/var/run/docker.sock:ro",
+		);
+	}
 
 	let deploy: Record<string, unknown> | undefined;
 	if (def.deploy) {

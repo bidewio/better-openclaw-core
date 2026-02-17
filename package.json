@@ -1,6 +1,6 @@
 {
   "name": "@better-openclaw/core",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": false,
   "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and more",
   "packageManager": "pnpm@9.15.4",

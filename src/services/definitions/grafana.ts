@@ -53,7 +53,22 @@ export const grafanaDefinition: ServiceDefinition = {
 	networks: ["openclaw-network"],
 
 	skills: [],
-	openclawEnvVars: [],
+	openclawEnvVars: [
+		{
+			key: "GRAFANA_HOST",
+			defaultValue: "grafana",
+			secret: false,
+			description: "Grafana hostname",
+			required: false,
+		},
+		{
+			key: "GRAFANA_PORT",
+			defaultValue: "3000",
+			secret: false,
+			description: "Grafana internal port",
+			required: false,
+		},
+	],
 
 	docsUrl: "https://grafana.com/docs/grafana/latest/",
 	tags: ["dashboards", "visualization", "metrics", "monitoring"],
