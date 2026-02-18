@@ -72,6 +72,7 @@ export { valkeyDefinition } from "./valkey.js";
 export { watchtowerDefinition } from "./watchtower.js";
 export { weaviateDefinition } from "./weaviate.js";
 export { whisperDefinition } from "./whisper.js";
+export { xyopsDefinition } from "./xyops.js";
 
 import type { ServiceDefinition } from "../../types.js";
 import { anythingLlmDefinition } from "./anything-llm.js";
@@ -148,6 +149,7 @@ import { valkeyDefinition } from "./valkey.js";
 import { watchtowerDefinition } from "./watchtower.js";
 import { weaviateDefinition } from "./weaviate.js";
 import { whisperDefinition } from "./whisper.js";
+import { xyopsDefinition } from "./xyops.js";
 
 export const allServiceDefinitions: ServiceDefinition[] = [
 	redisDefinition,
@@ -224,4 +226,5 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	streamGatewayDefinition,
 	neo4jDefinition,
 	calComDefinition,
+	xyopsDefinition,
 ];
