@@ -1,7 +1,8 @@
 // import { readFileSync } from "node:fs";
 // import { dirname, resolve } from "node:path";
 // import { fileURLToPath } from "node:url";
-import manifestJson from "../../../../skills/manifest.json" with { type: "json" };
+//import manifestJson from "../../../../skills/manifest.json" with { type: "json" };
+import manifestJson from "./manifest.json" with { type: "json" };
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
