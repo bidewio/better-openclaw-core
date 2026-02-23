@@ -1,4 +1,3 @@
-
 export const CURRENT_CONFIG_VERSION = 2;
 
 type MigrationFn = (input: Record<string, unknown>) => Record<string, unknown>;

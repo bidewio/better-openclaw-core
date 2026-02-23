@@ -54,4 +54,3 @@ export function getManifestSkillCount(): number {
 	return manifestData.skills.length;
 	//return loadManifest().length;
 }
-

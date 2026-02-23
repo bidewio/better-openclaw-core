@@ -75,7 +75,9 @@ function generateBashScript(resolved: ResolverOutput, options: HealthCheckOption
 		dockerChecks.push(L("  # ── ", svc.icon, " ", svc.name, " ──"));
 		dockerChecks.push(L('  check_container "', svc.id, '" "', svc.name, '" "', svc.icon, '"'));
 		for (const p of svc.ports.filter((pp) => pp.exposed)) {
-			dockerChecks.push(L('  check_port "', svc.id, '" ', String(p.host), ' "', p.description, '"'));
+			dockerChecks.push(
+				L('  check_port "', svc.id, '" ', String(p.host), ' "', p.description, '"'),
+			);
 		}
 		if (svc.healthCheckCmd) {
 			dockerChecks.push(
@@ -253,8 +255,8 @@ function generateBashScript(resolved: ResolverOutput, options: HealthCheckOption
 		"  fi",
 		"",
 		"  local state health_status",
-		"  state=$(echo \"$status\" | grep -o '\"State\":\"[^\"]*\"' | cut -d'\"' -f4 || echo \"unknown\")",
-		"  health_status=$(echo \"$status\" | grep -o '\"Health\":\"[^\"]*\"' | cut -d'\"' -f4 || echo \"none\")",
+		'  state=$(echo "$status" | grep -o \'"State":"[^"]*"\' | cut -d\'"\' -f4 || echo "unknown")',
+		'  health_status=$(echo "$status" | grep -o \'"Health":"[^"]*"\' | cut -d\'"\' -f4 || echo "none")',
 		"",
 		'  restarts=$(docker inspect --format="{{.RestartCount}}" "$(docker compose ps -q "$id" 2>/dev/null | head -1)" 2>/dev/null || echo "0")',
 		"",
@@ -463,11 +465,27 @@ function generatePowerShellScript(resolved: ResolverOutput, options: HealthCheck
 	for (const svc of checks) {
 		dockerChecks.push(L("    # ", svc.icon, " ", svc.name));
 		dockerChecks.push(
-			L('    Test-Container -ServiceId "', svc.id, '" -ServiceName "', svc.name, '" -Icon "', svc.icon, '"'),
+			L(
+				'    Test-Container -ServiceId "',
+				svc.id,
+				'" -ServiceName "',
+				svc.name,
+				'" -Icon "',
+				svc.icon,
+				'"',
+			),
 		);
 		for (const p of svc.ports.filter((pp) => pp.exposed)) {
 			dockerChecks.push(
-				L('    Test-Port -ServiceId "', svc.id, '" -Port ', String(p.host), ' -Description "', p.description, '"'),
+				L(
+					'    Test-Port -ServiceId "',
+					svc.id,
+					'" -Port ',
+					String(p.host),
+					' -Description "',
+					p.description,
+					'"',
+				),
 			);
 		}
 		dockerChecks.push("");
@@ -478,11 +496,27 @@ function generatePowerShellScript(resolved: ResolverOutput, options: HealthCheck
 	for (const svc of checks) {
 		bmChecks.push(L("    # ", svc.icon, " ", svc.name));
 		bmChecks.push(
-			L('    Test-ProcessRunning -ServiceId "', svc.id, '" -ServiceName "', svc.name, '" -Icon "', svc.icon, '"'),
+			L(
+				'    Test-ProcessRunning -ServiceId "',
+				svc.id,
+				'" -ServiceName "',
+				svc.name,
+				'" -Icon "',
+				svc.icon,
+				'"',
+			),
 		);
 		for (const p of svc.ports.filter((pp) => pp.exposed)) {
 			bmChecks.push(
-				L('    Test-Port -ServiceId "', svc.id, '" -Port ', String(p.host), ' -Description "', p.description, '"'),
+				L(
+					'    Test-Port -ServiceId "',
+					svc.id,
+					'" -Port ',
+					String(p.host),
+					' -Description "',
+					p.description,
+					'"',
+				),
 			);
 		}
 		bmChecks.push("");
@@ -498,7 +532,11 @@ function generatePowerShellScript(resolved: ResolverOutput, options: HealthCheck
 		"",
 		".DESCRIPTION",
 		"    Auto-generated verification script for your stack.",
-		L("    Checks ", String(total), " services: container status, port reachability, and log errors."),
+		L(
+			"    Checks ",
+			String(total),
+			" services: container status, port reachability, and log errors.",
+		),
 		"",
 		".PARAMETER Quick",
 		"    Skip log scanning for faster results.",
