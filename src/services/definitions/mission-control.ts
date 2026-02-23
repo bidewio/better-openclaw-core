@@ -32,8 +32,7 @@ export const missionControlDefinition: ServiceDefinition = {
 			key: "CONVEX_SELF_HOSTED_URL",
 			defaultValue: "http://convex:3210",
 			secret: false,
-			description:
-				"Internal Docker URL for pushing Convex functions during build",
+			description: "Internal Docker URL for pushing Convex functions during build",
 			required: true,
 		},
 		{
@@ -52,8 +51,7 @@ export const missionControlDefinition: ServiceDefinition = {
 	skills: [],
 	openclawEnvVars: [],
 
-	docsUrl:
-		"https://github.com/bidewio/better-openclaw/tree/main/packages/mission-control",
+	docsUrl: "https://github.com/bidewio/better-openclaw/tree/main/packages/mission-control",
 	selfHostedDocsUrl:
 		"https://github.com/bidewio/better-openclaw/tree/main/packages/mission-control",
 	tags: ["openclaw", "dashboard", "monitoring", "agents", "analytics", "convex"],

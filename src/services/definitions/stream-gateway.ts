@@ -50,8 +50,7 @@ export const streamGatewayDefinition: ServiceDefinition = {
 			key: "TIKTOK_STREAM_URL",
 			defaultValue: "",
 			secret: true,
-			description:
-				"Full TikTok RTMP URL from TikTok Studio (leave empty to skip TikTok relay)",
+			description: "Full TikTok RTMP URL from TikTok Studio (leave empty to skip TikTok relay)",
 			required: false,
 		},
 		{

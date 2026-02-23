@@ -64,8 +64,7 @@ export const convexDefinition: ServiceDefinition = {
 			key: "DATABASE_URL",
 			defaultValue: "",
 			secret: true,
-			description:
-				"Optional Postgres connection string for production (leave empty to use SQLite)",
+			description: "Optional Postgres connection string for production (leave empty to use SQLite)",
 			required: false,
 		},
 		{
@@ -106,8 +105,7 @@ export const convexDefinition: ServiceDefinition = {
 	openclawEnvVars: [],
 
 	docsUrl: "https://github.com/get-convex/convex-backend",
-	selfHostedDocsUrl:
-		"https://github.com/get-convex/convex-backend/blob/main/self-hosted/README.md",
+	selfHostedDocsUrl: "https://github.com/get-convex/convex-backend/blob/main/self-hosted/README.md",
 	tags: ["convex", "database", "reactive", "real-time", "backend", "self-hosted"],
 	maturity: "stable",
 

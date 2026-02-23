@@ -124,15 +124,7 @@ export const desktopEnvironmentDefinition: ServiceDefinition = {
 	],
 
 	docsUrl: "https://www.kasmweb.com/docs/latest/index.html",
-	tags: [
-		"computer-use",
-		"vnc",
-		"desktop",
-		"screen-capture",
-		"automation",
-		"obs",
-		"kasm",
-	],
+	tags: ["computer-use", "vnc", "desktop", "screen-capture", "automation", "obs", "kasm"],
 	maturity: "experimental",
 
 	requires: [],

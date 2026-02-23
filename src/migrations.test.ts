@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { migrateConfig, needsMigration, CURRENT_CONFIG_VERSION } from "./migrations.js";
+import { CURRENT_CONFIG_VERSION, migrateConfig, needsMigration } from "./migrations.js";
 
 describe("config migrations", () => {
 	it("migrates v1 config to current version", () => {

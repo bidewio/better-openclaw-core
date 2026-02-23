@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { resolve } from "./resolver.js";
 import { getAllServices, getServiceById } from "./services/registry.js";
-import { checkCompatibility, getImageReference, getImageTag, pinImageTags } from "./version-manager.js";
+import {
+	checkCompatibility,
+	getImageReference,
+	getImageTag,
+	pinImageTags,
+} from "./version-manager.js";
 
 describe("getImageTag", () => {
 	it("returns the tag for a known service", () => {
@@ -88,7 +93,9 @@ describe("checkCompatibility", () => {
 
 		if (redis && valkey) {
 			const warnings = checkCompatibility([redis, valkey]);
-			expect(warnings.some((w) => w.message.includes("Redis") && w.message.includes("Valkey"))).toBe(true);
+			expect(
+				warnings.some((w) => w.message.includes("Redis") && w.message.includes("Valkey")),
+			).toBe(true);
 		}
 	});
 
@@ -99,7 +106,9 @@ describe("checkCompatibility", () => {
 
 		if (caddy && traefik) {
 			const warnings = checkCompatibility([caddy, traefik]);
-			expect(warnings.some((w) => w.message.includes("Caddy") && w.message.includes("Traefik"))).toBe(true);
+			expect(
+				warnings.some((w) => w.message.includes("Caddy") && w.message.includes("Traefik")),
+			).toBe(true);
 		}
 	});
 
@@ -128,7 +137,9 @@ describe("checkCompatibility", () => {
 		const redis = getServiceById("redis");
 		if (redis) {
 			const warnings = checkCompatibility([redis]);
-			expect(warnings.filter((w) => w.type === "compatibility" && !w.message.includes("GPU"))).toHaveLength(0);
+			expect(
+				warnings.filter((w) => w.type === "compatibility" && !w.message.includes("GPU")),
+			).toHaveLength(0);
 		}
 	});
 });

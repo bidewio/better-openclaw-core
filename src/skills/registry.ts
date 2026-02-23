@@ -70,12 +70,7 @@ const skillPacks: SkillPack[] = [
 		description:
 			"Full social media content pipeline with scheduling, media processing, analytics, and storage",
 		requiredServices: ["postiz", "ffmpeg", "minio", "redis", "postgresql"],
-		skills: [
-			"ffmpeg-process",
-			"minio-storage",
-			"redis-cache",
-			"postiz-schedule",
-		],
+		skills: ["ffmpeg-process", "minio-storage", "redis-cache", "postiz-schedule"],
 		icon: "📱",
 		tags: ["social-media", "content", "scheduling", "analytics"],
 	},
@@ -140,59 +135,34 @@ const skillPacks: SkillPack[] = [
 		description:
 			"Natural language processing with summarization, translation, classification, and embeddings via Ollama",
 		requiredServices: ["ollama"],
-		skills: [
-			"text-summarize",
-			"text-translate",
-			"text-classify",
-			"text-embed",
-			"ollama-local-llm",
-		],
+		skills: ["text-summarize", "text-translate", "text-classify", "text-embed", "ollama-local-llm"],
 		icon: "🧠",
 		tags: ["nlp", "text", "embeddings", "translation"],
 	},
 	{
 		id: "image-processor",
 		name: "Image Processor",
-		description:
-			"Resize, convert, and OCR images with ImageMagick and Tesseract",
+		description: "Resize, convert, and OCR images with ImageMagick and Tesseract",
 		requiredServices: ["ffmpeg"],
-		skills: [
-			"image-resize",
-			"image-convert",
-			"image-ocr",
-			"ffmpeg-process",
-		],
+		skills: ["image-resize", "image-convert", "image-ocr", "ffmpeg-process"],
 		icon: "🖼️",
 		tags: ["image", "ocr", "media", "conversion"],
 	},
 	{
 		id: "api-integrator",
 		name: "API Integrator",
-		description:
-			"HTTP requests, webhooks, and GraphQL queries for external API integration",
+		description: "HTTP requests, webhooks, and GraphQL queries for external API integration",
 		requiredServices: [],
-		skills: [
-			"http-request",
-			"api-webhook",
-			"graphql-query",
-		],
+		skills: ["http-request", "api-webhook", "graphql-query"],
 		icon: "🌐",
 		tags: ["api", "http", "webhook", "graphql"],
 	},
 	{
 		id: "security-ops",
 		name: "Security Ops",
-		description:
-			"JWT validation, hashing, SSL checks, port scanning, and network diagnostics",
+		description: "JWT validation, hashing, SSL checks, port scanning, and network diagnostics",
 		requiredServices: [],
-		skills: [
-			"jwt-manage",
-			"hash-generate",
-			"ssl-check",
-			"dns-lookup",
-			"port-scan",
-			"ping-check",
-		],
+		skills: ["jwt-manage", "hash-generate", "ssl-check", "dns-lookup", "port-scan", "ping-check"],
 		icon: "🛡️",
 		tags: ["security", "networking", "diagnostics"],
 	},
@@ -216,8 +186,7 @@ const skillPacks: SkillPack[] = [
 	{
 		id: "analytics-suite",
 		name: "Analytics Suite",
-		description:
-			"Web and product analytics with Matomo, Umami, OpenPanel, Grafana, and Prometheus",
+		description: "Web and product analytics with Matomo, Umami, OpenPanel, Grafana, and Prometheus",
 		requiredServices: ["grafana", "prometheus"],
 		skills: [
 			"matomo-track",
@@ -253,16 +222,9 @@ const skillPacks: SkillPack[] = [
 	{
 		id: "document-manager",
 		name: "Document Manager",
-		description:
-			"Document processing pipeline with wiki, archival, OCR, Q&A, and PDF extraction",
+		description: "Document processing pipeline with wiki, archival, OCR, Q&A, and PDF extraction",
 		requiredServices: ["outline", "paperless-ngx"],
-		skills: [
-			"outline-wiki",
-			"paperless-archive",
-			"docsgpt-ask",
-			"pdf-extract",
-			"image-ocr",
-		],
+		skills: ["outline-wiki", "paperless-archive", "docsgpt-ask", "pdf-extract", "image-ocr"],
 		icon: "📑",
 		tags: ["documents", "wiki", "ocr", "archive"],
 	},
@@ -307,12 +269,7 @@ const skillPacks: SkillPack[] = [
 		description:
 			"Complete self-hosted infrastructure with cloud storage, photos, media streaming, and password management",
 		requiredServices: ["nextcloud", "immich", "jellyfin", "vaultwarden"],
-		skills: [
-			"nextcloud-files",
-			"immich-photos",
-			"jellyfin-media",
-			"vaultwarden-manage",
-		],
+		skills: ["nextcloud-files", "immich-photos", "jellyfin-media", "vaultwarden-manage"],
 		icon: "☁️",
 		tags: ["self-hosted", "cloud", "storage", "media", "security"],
 	},
@@ -335,8 +292,7 @@ const skillPacks: SkillPack[] = [
 	{
 		id: "cicd-pipeline",
 		name: "CI/CD Pipeline",
-		description:
-			"Full CI/CD pipeline with Jenkins, ArgoCD, Woodpecker, and infrastructure as code",
+		description: "Full CI/CD pipeline with Jenkins, ArgoCD, Woodpecker, and infrastructure as code",
 		requiredServices: ["jenkins"],
 		skills: [
 			"jenkins-pipeline",
@@ -385,8 +341,7 @@ const skillPacks: SkillPack[] = [
 	{
 		id: "backend-platform",
 		name: "Backend Platform",
-		description:
-			"Backend-as-a-service with Supabase, Appwrite, PocketBase, and API gateway",
+		description: "Backend-as-a-service with Supabase, Appwrite, PocketBase, and API gateway",
 		requiredServices: ["supabase"],
 		skills: [
 			"supabase-query",
@@ -420,12 +375,7 @@ const skillPacks: SkillPack[] = [
 		description:
 			"Document management with Paperless-ngx, BookStack wiki, Stirling PDF tools, and Excalidraw",
 		requiredServices: ["paperless-ngx"],
-		skills: [
-			"paperless-ngx-docs",
-			"bookstack-wiki",
-			"stirling-pdf-tools",
-			"excalidraw-draw",
-		],
+		skills: ["paperless-ngx-docs", "bookstack-wiki", "stirling-pdf-tools", "excalidraw-draw"],
 		icon: "📑",
 		tags: ["documents", "wiki", "pdf", "collaboration"],
 	},
@@ -435,16 +385,50 @@ const skillPacks: SkillPack[] = [
 		description:
 			"Home automation and event-driven workflows with Home Assistant, Huginn, and Activepieces",
 		requiredServices: ["homeassistant"],
-		skills: [
-			"home-assistant-automate",
-			"huginn-automate",
-			"activepieces-flow",
-		],
+		skills: ["home-assistant-automate", "huginn-automate", "activepieces-flow"],
 		icon: "🏠",
 		tags: ["iot", "automation", "smart-home", "workflows"],
 	},
+	// ── Aura Build Frontend Design Skills ────────────────────────────
+	{
+		id: "frontend-design",
+		name: "Frontend Design",
+		description:
+			"Front-end design skills for UI systems, web animations, responsive layouts, copywriting, and asset management — sourced from Aura Build",
+		requiredServices: [],
+		skills: [
+			"ui-prompting",
+			"pricing-page-design",
+			"landing-page-design",
+			"gsap-animate",
+			"threejs-scene",
+			"matterjs-physics",
+			"globe-gl-visualize",
+			"tailwindcss-style",
+			"css-border-gradient",
+			"progressive-blur",
+			"animation-on-scroll",
+			"css-alpha-masking",
+			"vantajs-background",
+			"cobejs-globe",
+			"unicorn-studio-embed",
+			"ui-design-system",
+			"tailwind-design-system-v4",
+			"interaction-design",
+			"responsive-design",
+			"web-interface-guidelines",
+			"threejs-animation",
+			"copywriting",
+			"frontend-distinctive-design",
+			"canvas-design",
+			"web-design-reviewer",
+			"animejs-animate",
+			"aura-asset-images",
+		],
+		icon: "🎨",
+		tags: ["frontend", "design", "animation", "css", "ui", "web-design"],
+	},
 ];
-
 
 const packMap = new Map<string, SkillPack>();
 for (const pack of skillPacks) {
