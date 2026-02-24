@@ -58,6 +58,7 @@ export { qdrantDefinition } from "./qdrant.js";
 export { redisDefinition } from "./redis.js";
 export { remotionDefinition } from "./remotion.js";
 export { rocketchatDefinition } from "./rocketchat.js";
+export { scraplingDefinition } from "./scrapling.js";
 export { searxngDefinition } from "./searxng.js";
 export { stableDiffusionDefinition } from "./stable-diffusion.js";
 export { steelBrowserDefinition } from "./steel-browser.js";
@@ -135,6 +136,7 @@ import { qdrantDefinition } from "./qdrant.js";
 import { redisDefinition } from "./redis.js";
 import { remotionDefinition } from "./remotion.js";
 import { rocketchatDefinition } from "./rocketchat.js";
+import { scraplingDefinition } from "./scrapling.js";
 import { searxngDefinition } from "./searxng.js";
 import { stableDiffusionDefinition } from "./stable-diffusion.js";
 import { steelBrowserDefinition } from "./steel-browser.js";
@@ -227,4 +229,5 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	neo4jDefinition,
 	calComDefinition,
 	xyopsDefinition,
+	scraplingDefinition,
 ];

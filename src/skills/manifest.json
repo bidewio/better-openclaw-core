@@ -1328,6 +1328,32 @@
       "path": "aura-asset-images/SKILL.md",
       "emoji": "📷",
       "services": []
+    },
+    {
+      "id": "tinyfish-cookbook",
+      "path": "tinyfish-cookbook/SKILL.md",
+      "emoji": "🐟",
+      "services": []
+    },
+    {
+      "id": "browser-learn",
+      "path": "browser-learn/SKILL.md",
+      "emoji": "🧠",
+      "services": []
+    },
+    {
+      "id": "scrapling-scrape",
+      "path": "scrapling-scrape/SKILL.md",
+      "emoji": "🕸️",
+      "services": [
+        "scrapling"
+      ]
+    },
+    {
+      "id": "youtube-growth",
+      "path": "youtube-growth/SKILL.md",
+      "emoji": "📈",
+      "services": []
     }
   ]
 }
