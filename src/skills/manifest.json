@@ -119,7 +119,23 @@
       "id": "better-openclaw",
       "path": "better-openclaw/SKILL.md",
       "emoji": "🦞",
-      "services": []
+      "services": [
+        "caddy",
+        "chromadb",
+        "ffmpeg",
+        "grafana",
+        "minio",
+        "n8n",
+        "ollama",
+        "postgresql",
+        "prometheus",
+        "qdrant",
+        "redis",
+        "remotion",
+        "traefik",
+        "weaviate",
+        "whisper"
+      ]
     },
     {
       "id": "postgresql-query",
@@ -517,25 +533,34 @@
       "id": "claude-code-assist",
       "path": "claude-code-assist/SKILL.md",
       "emoji": "🤖",
-      "services": []
+      "services": [
+        "claude-code"
+      ]
     },
     {
       "id": "codex-generate",
       "path": "codex-generate/SKILL.md",
       "emoji": "⌨️",
-      "services": []
+      "services": [
+        "codex"
+      ]
     },
     {
       "id": "gemini-cli-query",
       "path": "gemini-cli-query/SKILL.md",
       "emoji": "♊",
-      "services": []
+      "services": [
+        "gemini-cli"
+      ]
     },
     {
       "id": "opencode-develop",
       "path": "opencode-develop/SKILL.md",
       "emoji": "🔓",
-      "services": []
+      "services": [
+        "opencode",
+        "ollama"
+      ]
     },
     {
       "id": "mission-control-manage",
@@ -731,7 +756,9 @@
       "id": "calendar-manage",
       "path": "calendar-manage/SKILL.md",
       "emoji": "📆",
-      "services": []
+      "services": [
+        "nextcloud"
+      ]
     },
     {
       "id": "system-info",
@@ -859,7 +886,10 @@
       "id": "haystack-rag",
       "path": "haystack-rag/SKILL.md",
       "emoji": "🔍",
-      "services": []
+      "services": [
+        "qdrant",
+        "weaviate"
+      ]
     },
     {
       "id": "llamaindex-query",
@@ -885,7 +915,9 @@
       "id": "ansible-configure",
       "path": "ansible-configure/SKILL.md",
       "emoji": "📋",
-      "services": []
+      "services": [
+        "jenkins"
+      ]
     },
     {
       "id": "woodpecker-ci",
@@ -1261,13 +1293,17 @@
       "id": "ui-design-system",
       "path": "ui-design-system/SKILL.md",
       "emoji": "🎨",
-      "services": []
+      "services": [
+        "claude-code"
+      ]
     },
     {
       "id": "tailwind-design-system-v4",
       "path": "tailwind-design-system-v4/SKILL.md",
       "emoji": "💨",
-      "services": []
+      "services": [
+        "ghost"
+      ]
     },
     {
       "id": "interaction-design",
@@ -1339,7 +1375,10 @@
       "id": "browser-learn",
       "path": "browser-learn/SKILL.md",
       "emoji": "🧠",
-      "services": []
+      "services": [
+        "browserless",
+        "lightpanda"
+      ]
     },
     {
       "id": "scrapling-scrape",
@@ -1353,7 +1392,11 @@
       "id": "youtube-growth",
       "path": "youtube-growth/SKILL.md",
       "emoji": "📈",
-      "services": []
+      "services": [
+        "comfyui",
+        "ollama",
+        "searxng"
+      ]
     },
     {
       "id": "hexstrike-mcp",
