@@ -74,7 +74,11 @@ function buildGatewayServices(
 		}
 		if (def.openclawVolumeMounts) {
 			for (const vol of def.openclawVolumeMounts) {
-				allVolumes.add(vol.name);
+				const isBindMount =
+					vol.name.startsWith("./") || vol.name.startsWith("/") || vol.name.startsWith("~");
+				if (!isBindMount) {
+					allVolumes.add(vol.name);
+				}
 				gatewayVolumes.push(`${vol.name}:${vol.containerPath}`);
 			}
 		}
@@ -172,8 +176,13 @@ function buildCompanionService(
 
 	if (def.volumes.length > 0) {
 		svc.volumes = def.volumes.map((v) => {
-			allVolumes.add(v.name);
-			volumeNames.push(v.name);
+			const isBindMount =
+				v.name.startsWith("./") || v.name.startsWith("/") || v.name.startsWith("~");
+			
+			if (!isBindMount) {
+				allVolumes.add(v.name);
+				volumeNames.push(v.name);
+			}
 			return `${v.name}:${v.containerPath}`;
 		});
 	}

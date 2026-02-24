@@ -22,6 +22,7 @@ export const ServiceCategorySchema = z.enum([
 	"knowledge",
 	"desktop",
 	"streaming",
+	"security",
 ]);
 
 export const MaturitySchema = z.enum(["stable", "beta", "experimental"]);

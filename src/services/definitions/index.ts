@@ -23,6 +23,7 @@ export { geminiCliDefinition } from "./gemini-cli.js";
 export { giteaDefinition } from "./gitea.js";
 export { gotifyDefinition } from "./gotify.js";
 export { grafanaDefinition } from "./grafana.js";
+export { hexstrikeDefinition } from "./hexstrike.js";
 export { kimiDefinition } from "./kimi.js";
 export { lasuiteMeetAgentsDefinition } from "./lasuite-meet-agents.js";
 export { lasuiteMeetBackendDefinition } from "./lasuite-meet-backend.js";
@@ -49,6 +50,8 @@ export { opencodeDefinition } from "./opencode.js";
 export { openpanelDefinition } from "./openpanel.js";
 export { outlineDefinition } from "./outline.js";
 export { paperlessNgxDefinition } from "./paperless-ngx.js";
+export { pentagiDefinition } from "./pentagi.js";
+export { pentestagentDefinition } from "./pentestagent.js";
 export { playwrightServerDefinition } from "./playwright-server.js";
 export { portainerDefinition } from "./portainer.js";
 export { postgresqlDefinition } from "./postgresql.js";
@@ -60,6 +63,7 @@ export { remotionDefinition } from "./remotion.js";
 export { rocketchatDefinition } from "./rocketchat.js";
 export { scraplingDefinition } from "./scrapling.js";
 export { searxngDefinition } from "./searxng.js";
+export { solidityGuardDefinition } from "./solidityguard.js";
 export { stableDiffusionDefinition } from "./stable-diffusion.js";
 export { steelBrowserDefinition } from "./steel-browser.js";
 export { streamGatewayDefinition } from "./stream-gateway.js";
@@ -101,6 +105,7 @@ import { geminiCliDefinition } from "./gemini-cli.js";
 import { giteaDefinition } from "./gitea.js";
 import { gotifyDefinition } from "./gotify.js";
 import { grafanaDefinition } from "./grafana.js";
+import { hexstrikeDefinition } from "./hexstrike.js";
 import { kimiDefinition } from "./kimi.js";
 import { lasuiteMeetAgentsDefinition } from "./lasuite-meet-agents.js";
 import { lasuiteMeetBackendDefinition } from "./lasuite-meet-backend.js";
@@ -127,6 +132,8 @@ import { opencodeDefinition } from "./opencode.js";
 import { openpanelDefinition } from "./openpanel.js";
 import { outlineDefinition } from "./outline.js";
 import { paperlessNgxDefinition } from "./paperless-ngx.js";
+import { pentagiDefinition } from "./pentagi.js";
+import { pentestagentDefinition } from "./pentestagent.js";
 import { playwrightServerDefinition } from "./playwright-server.js";
 import { portainerDefinition } from "./portainer.js";
 import { postgresqlDefinition } from "./postgresql.js";
@@ -138,6 +145,7 @@ import { remotionDefinition } from "./remotion.js";
 import { rocketchatDefinition } from "./rocketchat.js";
 import { scraplingDefinition } from "./scrapling.js";
 import { searxngDefinition } from "./searxng.js";
+import { solidityGuardDefinition } from "./solidityguard.js";
 import { stableDiffusionDefinition } from "./stable-diffusion.js";
 import { steelBrowserDefinition } from "./steel-browser.js";
 import { streamGatewayDefinition } from "./stream-gateway.js";
@@ -230,4 +238,8 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	calComDefinition,
 	xyopsDefinition,
 	scraplingDefinition,
+	hexstrikeDefinition,
+	solidityGuardDefinition,
+	pentagiDefinition,
+	pentestagentDefinition,
 ];

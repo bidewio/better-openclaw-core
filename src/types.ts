@@ -126,4 +126,5 @@ export const SERVICE_CATEGORIES: CategoryInfo[] = [
 	{ id: "communication", name: "Notifications", icon: "🔔" },
 	{ id: "desktop", name: "Desktop Environment", icon: "🖥️" },
 	{ id: "streaming", name: "Streaming & Relay", icon: "📺" },
+	{ id: "security", name: "Security & Pentesting", icon: "🛡️" },
 ];

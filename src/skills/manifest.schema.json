@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OpenClaw Skills Manifest",
+    "description": "Validation schema for the Better-OpenClaw skill registry",
+    "type": "object",
+    "required": [
+        "version",
+        "skills"
+    ],
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "skills": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "path",
+                    "emoji",
+                    "services"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Unique identifier for the skill"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Relative path to the SKILL.md file"
+                    },
+                    "emoji": {
+                        "type": "string",
+                        "description": "Emoji icon representing the skill"
+                    },
+                    "services": {
+                        "type": "array",
+                        "description": "List of service IDs required by this skill",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

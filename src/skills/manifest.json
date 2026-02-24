@@ -1354,6 +1354,38 @@
       "path": "youtube-growth/SKILL.md",
       "emoji": "📈",
       "services": []
+    },
+    {
+      "id": "hexstrike-mcp",
+      "path": "hexstrike-mcp/SKILL.md",
+      "emoji": "⚔️",
+      "services": [
+        "hexstrike"
+      ]
+    },
+    {
+      "id": "solidityguard-audit",
+      "path": "solidityguard-audit/SKILL.md",
+      "emoji": "🛡️",
+      "services": [
+        "solidityguard"
+      ]
+    },
+    {
+      "id": "pentagi-orchestrator",
+      "path": "pentagi-orchestrator/SKILL.md",
+      "emoji": "🕵️",
+      "services": [
+        "pentagi"
+      ]
+    },
+    {
+      "id": "pentestagent-runner",
+      "path": "pentestagent-runner/SKILL.md",
+      "emoji": "🔍",
+      "services": [
+        "pentestagent"
+      ]
     }
   ]
 }
