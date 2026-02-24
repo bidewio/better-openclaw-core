@@ -1,5 +1,6 @@
 export { anythingLlmDefinition } from "./anything-llm.js";
 export { appflowyDefinition } from "./appflowy.js";
+export { authentikDefinition } from "./authentik.js";
 export { beszelDefinition } from "./beszel.js";
 export { browserlessDefinition } from "./browserless.js";
 export { caddyDefinition } from "./caddy.js";
@@ -12,6 +13,7 @@ export { comfyuiDefinition } from "./comfyui.js";
 export { convexDefinition } from "./convex.js";
 export { convexDashboardDefinition } from "./convex-dashboard.js";
 export { coolifyDefinition } from "./coolify.js";
+export { crowdsecDefinition } from "./crowdsec.js";
 export { desktopEnvironmentDefinition } from "./desktop-environment.js";
 export { difyDefinition } from "./dify.js";
 export { docsgptDefinition } from "./docsgpt.js";
@@ -20,10 +22,15 @@ export { dozzleDefinition } from "./dozzle.js";
 export { ffmpegDefinition } from "./ffmpeg.js";
 export { flowiseDefinition } from "./flowise.js";
 export { geminiCliDefinition } from "./gemini-cli.js";
+export { ghostDefinition } from "./ghost.js";
 export { giteaDefinition } from "./gitea.js";
 export { gotifyDefinition } from "./gotify.js";
 export { grafanaDefinition } from "./grafana.js";
 export { hexstrikeDefinition } from "./hexstrike.js";
+export { homeassistantDefinition } from "./homeassistant.js";
+export { immichDefinition } from "./immich.js";
+export { jellyfinDefinition } from "./jellyfin.js";
+export { jenkinsDefinition } from "./jenkins.js";
 export { kimiDefinition } from "./kimi.js";
 export { lasuiteMeetAgentsDefinition } from "./lasuite-meet-agents.js";
 export { lasuiteMeetBackendDefinition } from "./lasuite-meet-backend.js";
@@ -32,16 +39,19 @@ export { librechatDefinition } from "./librechat.js";
 export { lightpandaDefinition } from "./lightpanda.js";
 export { litellmDefinition } from "./litellm.js";
 export { livekitDefinition } from "./livekit.js";
+export { lokiDefinition } from "./loki.js";
 export { matomoDefinition } from "./matomo.js";
 export { matrixSynapseDefinition } from "./matrix-synapse.js";
 export { mattermostDefinition } from "./mattermost.js";
 export { meilisearchDefinition } from "./meilisearch.js";
+export { milvusDefinition } from "./milvus.js";
 export { minioDefinition } from "./minio.js";
 export { missionControlDefinition } from "./mission-control.js";
 export { mixpostDefinition } from "./mixpost.js";
 export { motionCanvasDefinition } from "./motion-canvas.js";
 export { n8nDefinition } from "./n8n.js";
 export { neo4jDefinition } from "./neo4j.js";
+export { nextcloudDefinition } from "./nextcloud.js";
 export { nocodbDefinition } from "./nocodb.js";
 export { ntfyDefinition } from "./ntfy.js";
 export { ollamaDefinition } from "./ollama.js";
@@ -63,10 +73,12 @@ export { remotionDefinition } from "./remotion.js";
 export { rocketchatDefinition } from "./rocketchat.js";
 export { scraplingDefinition } from "./scrapling.js";
 export { searxngDefinition } from "./searxng.js";
+export { signozDefinition } from "./signoz.js";
 export { solidityGuardDefinition } from "./solidityguard.js";
 export { stableDiffusionDefinition } from "./stable-diffusion.js";
 export { steelBrowserDefinition } from "./steel-browser.js";
 export { streamGatewayDefinition } from "./stream-gateway.js";
+export { supabaseDefinition } from "./supabase.js";
 export { tailscaleDefinition } from "./tailscale.js";
 export { temporalDefinition } from "./temporal.js";
 export { traefikDefinition } from "./traefik.js";
@@ -74,6 +86,7 @@ export { umamiDefinition } from "./umami.js";
 export { uptimeKumaDefinition } from "./uptime-kuma.js";
 export { usesendDefinition } from "./usesend.js";
 export { valkeyDefinition } from "./valkey.js";
+export { vaultwardenDefinition } from "./vaultwarden.js";
 export { watchtowerDefinition } from "./watchtower.js";
 export { weaviateDefinition } from "./weaviate.js";
 export { whisperDefinition } from "./whisper.js";
@@ -82,6 +95,7 @@ export { xyopsDefinition } from "./xyops.js";
 import type { ServiceDefinition } from "../../types.js";
 import { anythingLlmDefinition } from "./anything-llm.js";
 import { appflowyDefinition } from "./appflowy.js";
+import { authentikDefinition } from "./authentik.js";
 import { beszelDefinition } from "./beszel.js";
 import { browserlessDefinition } from "./browserless.js";
 import { caddyDefinition } from "./caddy.js";
@@ -94,6 +108,7 @@ import { comfyuiDefinition } from "./comfyui.js";
 import { convexDefinition } from "./convex.js";
 import { convexDashboardDefinition } from "./convex-dashboard.js";
 import { coolifyDefinition } from "./coolify.js";
+import { crowdsecDefinition } from "./crowdsec.js";
 import { desktopEnvironmentDefinition } from "./desktop-environment.js";
 import { difyDefinition } from "./dify.js";
 import { docsgptDefinition } from "./docsgpt.js";
@@ -102,10 +117,15 @@ import { dozzleDefinition } from "./dozzle.js";
 import { ffmpegDefinition } from "./ffmpeg.js";
 import { flowiseDefinition } from "./flowise.js";
 import { geminiCliDefinition } from "./gemini-cli.js";
+import { ghostDefinition } from "./ghost.js";
 import { giteaDefinition } from "./gitea.js";
 import { gotifyDefinition } from "./gotify.js";
 import { grafanaDefinition } from "./grafana.js";
 import { hexstrikeDefinition } from "./hexstrike.js";
+import { homeassistantDefinition } from "./homeassistant.js";
+import { immichDefinition } from "./immich.js";
+import { jellyfinDefinition } from "./jellyfin.js";
+import { jenkinsDefinition } from "./jenkins.js";
 import { kimiDefinition } from "./kimi.js";
 import { lasuiteMeetAgentsDefinition } from "./lasuite-meet-agents.js";
 import { lasuiteMeetBackendDefinition } from "./lasuite-meet-backend.js";
@@ -114,16 +134,19 @@ import { librechatDefinition } from "./librechat.js";
 import { lightpandaDefinition } from "./lightpanda.js";
 import { litellmDefinition } from "./litellm.js";
 import { livekitDefinition } from "./livekit.js";
+import { lokiDefinition } from "./loki.js";
 import { matomoDefinition } from "./matomo.js";
 import { matrixSynapseDefinition } from "./matrix-synapse.js";
 import { mattermostDefinition } from "./mattermost.js";
 import { meilisearchDefinition } from "./meilisearch.js";
+import { milvusDefinition } from "./milvus.js";
 import { minioDefinition } from "./minio.js";
 import { missionControlDefinition } from "./mission-control.js";
 import { mixpostDefinition } from "./mixpost.js";
 import { motionCanvasDefinition } from "./motion-canvas.js";
 import { n8nDefinition } from "./n8n.js";
 import { neo4jDefinition } from "./neo4j.js";
+import { nextcloudDefinition } from "./nextcloud.js";
 import { nocodbDefinition } from "./nocodb.js";
 import { ntfyDefinition } from "./ntfy.js";
 import { ollamaDefinition } from "./ollama.js";
@@ -145,10 +168,12 @@ import { remotionDefinition } from "./remotion.js";
 import { rocketchatDefinition } from "./rocketchat.js";
 import { scraplingDefinition } from "./scrapling.js";
 import { searxngDefinition } from "./searxng.js";
+import { signozDefinition } from "./signoz.js";
 import { solidityGuardDefinition } from "./solidityguard.js";
 import { stableDiffusionDefinition } from "./stable-diffusion.js";
 import { steelBrowserDefinition } from "./steel-browser.js";
 import { streamGatewayDefinition } from "./stream-gateway.js";
+import { supabaseDefinition } from "./supabase.js";
 import { tailscaleDefinition } from "./tailscale.js";
 import { temporalDefinition } from "./temporal.js";
 import { traefikDefinition } from "./traefik.js";
@@ -156,6 +181,7 @@ import { umamiDefinition } from "./umami.js";
 import { uptimeKumaDefinition } from "./uptime-kuma.js";
 import { usesendDefinition } from "./usesend.js";
 import { valkeyDefinition } from "./valkey.js";
+import { vaultwardenDefinition } from "./vaultwarden.js";
 import { watchtowerDefinition } from "./watchtower.js";
 import { weaviateDefinition } from "./weaviate.js";
 import { whisperDefinition } from "./whisper.js";
@@ -198,6 +224,19 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	comfyuiDefinition,
 	playwrightServerDefinition,
 	openWebuiDefinition,
+	homeassistantDefinition,
+	nextcloudDefinition,
+	immichDefinition,
+	jellyfinDefinition,
+	vaultwardenDefinition,
+	milvusDefinition,
+	jenkinsDefinition,
+	authentikDefinition,
+	crowdsecDefinition,
+	ghostDefinition,
+	lokiDefinition,
+	signozDefinition,
+	supabaseDefinition,
 	librechatDefinition,
 	anythingLlmDefinition,
 	difyDefinition,

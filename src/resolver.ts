@@ -241,16 +241,16 @@ export function resolve(input: ResolverInput): ResolverOutput {
 	const isValid = errors.length === 0;
 
 	return {
-	services,
-	addedDependencies,
-	removedConflicts: [],
-	warnings,
-	errors,
-	isValid,
-	estimatedMemoryMB,
-	aiProviders: input.aiProviders ?? [],
-	gsdRuntimes: []
-};
+		services,
+		addedDependencies,
+		removedConflicts: [],
+		warnings,
+		errors,
+		isValid,
+		estimatedMemoryMB,
+		aiProviders: input.aiProviders ?? [],
+		gsdRuntimes: [],
+	};
 }
 
 /**
