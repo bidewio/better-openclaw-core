@@ -248,6 +248,7 @@ export function resolve(input: ResolverInput): ResolverOutput {
 		errors,
 		isValid,
 		estimatedMemoryMB,
+		aiProviders: input.aiProviders ?? [],
 	};
 }
 

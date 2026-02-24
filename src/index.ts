@@ -83,6 +83,7 @@ export {
 // ─── Types ──────────────────────────────────────────────────────────────────
 export type {
 	AddedDependency,
+	AiProvider,
 	ApiError,
 	CategoryInfo,
 	ComposeOptions,
@@ -94,6 +95,7 @@ export type {
 	GenerationInput,
 	GenerationMetadata,
 	GenerationResult,
+	GsdRuntime,
 	HealthCheck,
 	Maturity,
 	NativePlatform,

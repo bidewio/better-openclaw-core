@@ -3,7 +3,8 @@ import type { ServiceDefinition } from "../../types.js";
 export const pentagiDefinition: ServiceDefinition = {
 	id: "pentagi",
 	name: "PentAGI",
-	description: "Fully autonomous AI Agents system capable of performing complex penetration testing tasks.",
+	description:
+		"Fully autonomous AI Agents system capable of performing complex penetration testing tasks.",
 	category: "security",
 	icon: "🕵️",
 

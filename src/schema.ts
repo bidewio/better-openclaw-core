@@ -48,6 +48,23 @@ export const DeploymentTargetSchema = z.enum(["local", "vps", "homelab", "clawex
 
 export const OutputFormatSchema = z.enum(["directory", "tar", "zip"]);
 
+export const AiProviderSchema = z.enum([
+	"openai",
+	"anthropic",
+	"google",
+	"xai",
+	"deepseek",
+	"groq",
+	"openrouter",
+	"mistral",
+	"together",
+	"ollama",
+	"lmstudio",
+	"vllm",
+]);
+
+export const GsdRuntimeSchema = z.enum(["claude", "opencode", "gemini", "codex"]);
+
 // ─── Sub-Schemas ────────────────────────────────────────────────────────────
 
 export const PortMappingSchema = z.object({
@@ -213,6 +230,8 @@ export const GenerationInputSchema = z.object({
 		}),
 	services: z.array(z.string()).default([]),
 	skillPacks: z.array(z.string()).default([]),
+	aiProviders: z.array(AiProviderSchema).default([]),
+	gsdRuntimes: z.array(GsdRuntimeSchema).default([]),
 	proxy: ProxyTypeSchema.default("none"),
 	domain: z.string().optional(),
 	gpu: z.boolean().default(false),
@@ -254,6 +273,8 @@ export const ResolverOutputSchema = z.object({
 	errors: z.array(ErrorSchema),
 	isValid: z.boolean(),
 	estimatedMemoryMB: z.number().int().min(0),
+	aiProviders: z.array(AiProviderSchema).default([]),
+	gsdRuntimes: z.array(GsdRuntimeSchema).default([]),
 });
 
 // ─── Compose Options ────────────────────────────────────────────────────────
@@ -275,6 +296,8 @@ export const ComposeOptionsSchema = z.object({
 export const ValidateRequestSchema = z.object({
 	services: z.array(z.string()),
 	skillPacks: z.array(z.string()).default([]),
+	aiProviders: z.array(AiProviderSchema).default([]),
+	gsdRuntimes: z.array(GsdRuntimeSchema).default([]),
 	proxy: ProxyTypeSchema.default("none"),
 	domain: z.string().optional(),
 	gpu: z.boolean().default(false),

@@ -125,6 +125,30 @@ export function generateEnvFiles(
 		});
 	}
 
+	// ── AI Provider API Keys ─────────────────────────────────────────────────
+
+	if (resolved.aiProviders && resolved.aiProviders.length > 0) {
+		lines.push({
+			comment:
+				"\n# ═══════════════════════════════════════════════════════════════════════════════\n# AI Provider API Keys\n# ═══════════════════════════════════════════════════════════════════════════════",
+			key: "",
+			exampleValue: "",
+			actualValue: "",
+		});
+
+		for (const provider of resolved.aiProviders) {
+			if (provider === "ollama" || provider === "lmstudio" || provider === "vllm") continue;
+
+			const envKey = `${provider.toUpperCase()}_API_KEY`;
+			lines.push({
+				comment: formatComment(`API Key for ${provider} AI models`, "OpenClaw Core", true, true),
+				key: envKey,
+				exampleValue: `your_${provider.toLowerCase()}_api_key_here`,
+				actualValue: "",
+			});
+		}
+	}
+
 	// Claude web-provider session variables (optional)
 	lines.push({
 		comment:
@@ -203,6 +227,7 @@ export function generateEnvFiles(
 	// ── Service-Specific Variables ───────────────────────────────────────────
 
 	const dbPasswordKeys = dbReqs.map((r) => r.passwordEnvVar);
+	const aiProviderKeys = (resolved.aiProviders || []).map((p) => `${p.toUpperCase()}_API_KEY`);
 	const seenKeys = new Set<string>([
 		"OPENCLAW_VERSION",
 		"OPENCLAW_GATEWAY_TOKEN",
@@ -217,6 +242,7 @@ export function generateEnvFiles(
 		"CLAUDE_WEB_SESSION_KEY",
 		"CLAUDE_WEB_COOKIE",
 		...dbPasswordKeys,
+		...aiProviderKeys,
 	]);
 
 	for (const { definition } of resolved.services) {

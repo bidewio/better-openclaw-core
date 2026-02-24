@@ -178,7 +178,7 @@ function buildCompanionService(
 		svc.volumes = def.volumes.map((v) => {
 			const isBindMount =
 				v.name.startsWith("./") || v.name.startsWith("/") || v.name.startsWith("~");
-			
+
 			if (!isBindMount) {
 				allVolumes.add(v.name);
 				volumeNames.push(v.name);

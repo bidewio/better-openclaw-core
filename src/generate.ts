@@ -8,10 +8,12 @@ import { StackConfigError, ValidationError } from "./errors.js";
 import { generateBareMetalInstall } from "./generators/bare-metal-install.js";
 import { generateCaddyfile } from "./generators/caddy.js";
 import { generateEnvFiles } from "./generators/env.js";
+import { generateGsdScripts } from "./generators/get-shit-done.js";
 import { generateGrafanaConfig, generateGrafanaDashboard } from "./generators/grafana.js";
 import { generateHealthCheck } from "./generators/health-check.js";
 import { generateN8nWorkflows } from "./generators/n8n-workflows.js";
 import { generateNativeInstallScripts } from "./generators/native-services.js";
+import { generateOpenClawConfig } from "./generators/openclaw-json.js";
 import { generatePostgresInit } from "./generators/postgres-init.js";
 import { generatePrometheusConfig } from "./generators/prometheus.js";
 import { generateReadme } from "./generators/readme.js";
@@ -49,6 +51,7 @@ export function generate(rawInput: GenerationInput): GenerationResult {
 	const resolverInput: ResolverInput = {
 		services: input.services,
 		skillPacks: input.skillPacks,
+		aiProviders: input.aiProviders,
 		proxy: input.proxy,
 		gpu: input.gpu,
 		platform: composePlatform,
@@ -141,6 +144,9 @@ export function generate(rawInput: GenerationInput): GenerationResult {
 	for (const [path, content] of Object.entries(skillFiles)) {
 		files[path] = content;
 	}
+
+	// OpenClaw Core Configuration
+	files["openclaw/config/openclaw.json"] = generateOpenClawConfig(resolved);
 
 	// README
 	files["README.md"] = generateReadme(resolved, {
@@ -236,6 +242,15 @@ export function generate(rawInput: GenerationInput): GenerationResult {
 		});
 		for (const [path, content] of Object.entries(bareMetalFiles)) {
 			files[path] = content;
+		}
+	}
+
+	// Get-Shit-Done setup scripts
+	if (input.gsdRuntimes && input.gsdRuntimes.length > 0) {
+		const gsdScripts = generateGsdScripts(input.gsdRuntimes);
+		if (gsdScripts) {
+			files["openclaw/scripts/setup-gsd.sh"] = gsdScripts.sh;
+			files["openclaw/scripts/setup-gsd.ps1"] = gsdScripts.ps1;
 		}
 	}
 

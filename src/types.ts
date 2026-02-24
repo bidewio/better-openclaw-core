@@ -1,6 +1,7 @@
 import type { z } from "zod";
 import type {
 	AddedDependencySchema,
+	AiProviderSchema,
 	ApiErrorSchema,
 	ComposeOptionsSchema,
 	DeploymentTargetSchema,
@@ -9,6 +10,7 @@ import type {
 	EnvVariableSchema,
 	ErrorSchema,
 	GenerationInputSchema,
+	GsdRuntimeSchema,
 	HealthCheckSchema,
 	MaturitySchema,
 	NativePlatformSchema,
@@ -34,6 +36,8 @@ import type {
 
 // ─── Inferred Types ─────────────────────────────────────────────────────────
 
+export type AiProvider = z.infer<typeof AiProviderSchema>;
+export type GsdRuntime = z.infer<typeof GsdRuntimeSchema>;
 export type ServiceCategory = z.infer<typeof ServiceCategorySchema>;
 export type Maturity = z.infer<typeof MaturitySchema>;
 export type Platform = z.infer<typeof PlatformSchema>;
@@ -77,6 +81,8 @@ export type ApiError = z.infer<typeof ApiErrorSchema>;
 export interface ResolverInput {
 	services: string[];
 	skillPacks: string[];
+	aiProviders?: AiProvider[];
+	gsdRuntimes?: GsdRuntime[];
 	proxy?: ProxyType;
 	gpu?: boolean;
 	platform?: Platform;
