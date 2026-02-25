@@ -9,7 +9,7 @@ export const minioDefinition: ServiceDefinition = {
 	icon: "💾",
 
 	image: "minio/minio",
-	imageTag: "latest",
+	imageTag: "RELEASE.2025-04-22T22-12-26Z",
 	ports: [
 		{
 			host: 9000,

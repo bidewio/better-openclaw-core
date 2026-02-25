@@ -9,7 +9,7 @@ export const matrixSynapseDefinition: ServiceDefinition = {
 	icon: "🔗",
 
 	image: "matrixdotorg/synapse",
-	imageTag: "latest",
+	imageTag: "v1.148.0",
 	ports: [
 		{
 			host: 8008,

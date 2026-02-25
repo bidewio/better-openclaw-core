@@ -8,7 +8,7 @@ export const flowiseDefinition: ServiceDefinition = {
 	icon: "🌊",
 
 	image: "flowiseai/flowise",
-	imageTag: "latest",
+	imageTag: "1.8.2",
 	ports: [
 		{
 			host: 3120,

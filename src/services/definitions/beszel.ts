@@ -9,7 +9,7 @@ export const beszelDefinition: ServiceDefinition = {
 	icon: "📟",
 
 	image: "henrygd/beszel",
-	imageTag: "latest",
+	imageTag: "0.1.2",
 	ports: [
 		{
 			host: 8099,

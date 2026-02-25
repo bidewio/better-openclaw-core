@@ -9,7 +9,7 @@ export const remotionDefinition: ServiceDefinition = {
 	icon: "🎥",
 
 	image: "remotion-dev/studio",
-	imageTag: "latest",
+	imageTag: "4",
 	ports: [
 		{
 			host: 3020,

@@ -9,7 +9,7 @@ export const uptimeKumaDefinition: ServiceDefinition = {
 	icon: "📡",
 
 	image: "louislam/uptime-kuma",
-	imageTag: "1",
+	imageTag: "2",
 	ports: [
 		{
 			host: 3001,

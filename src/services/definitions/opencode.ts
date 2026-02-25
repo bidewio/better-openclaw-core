@@ -9,7 +9,7 @@ export const opencodeDefinition: ServiceDefinition = {
 	icon: "🐙",
 
 	image: "ghcr.io/opencode-ai/opencode",
-	imageTag: "latest",
+	imageTag: "v1.2.14",
 	ports: [
 		{
 			host: 3030,

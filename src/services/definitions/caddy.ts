@@ -9,7 +9,7 @@ export const caddyDefinition: ServiceDefinition = {
 	icon: "🔒",
 
 	image: "caddy",
-	imageTag: "2-alpine",
+	imageTag: "2.11.1",
 	ports: [
 		{
 			host: 80,

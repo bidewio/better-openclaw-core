@@ -9,7 +9,7 @@ export const anythingLlmDefinition: ServiceDefinition = {
 	icon: "📖",
 
 	image: "mintplexlabs/anythingllm",
-	imageTag: "latest",
+	imageTag: "1.3.0",
 	ports: [
 		{
 			host: 3100,

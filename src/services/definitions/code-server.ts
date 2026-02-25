@@ -8,7 +8,7 @@ export const codeServerDefinition: ServiceDefinition = {
 	icon: "🖥️",
 
 	image: "lscr.io/linuxserver/code-server",
-	imageTag: "latest",
+	imageTag: "4.96.4",
 	ports: [
 		{
 			host: 8443,

@@ -9,7 +9,7 @@ export const jellyfinDefinition: ServiceDefinition = {
 	icon: "🎬",
 
 	image: "jellyfin/jellyfin",
-	imageTag: "latest",
+	imageTag: "2026020205",
 	ports: [
 		{
 			host: 8096,

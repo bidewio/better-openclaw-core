@@ -8,7 +8,7 @@ export const stableDiffusionDefinition: ServiceDefinition = {
 	icon: "🎨",
 
 	image: "ghcr.io/stable-diffusion-webui/stable-diffusion-webui",
-	imageTag: "latest",
+	imageTag: "latest-cuda",
 	ports: [
 		{
 			host: 7860,

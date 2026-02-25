@@ -9,7 +9,7 @@ export const rocketchatDefinition: ServiceDefinition = {
 	icon: "🚀",
 
 	image: "rocket.chat",
-	imageTag: "latest",
+	imageTag: "7.9.7",
 	ports: [
 		{
 			host: 3200,

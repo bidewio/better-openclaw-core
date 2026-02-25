@@ -9,7 +9,7 @@ export const comfyuiDefinition: ServiceDefinition = {
 	icon: "🎨",
 
 	image: "ghcr.io/ai-dock/comfyui",
-	imageTag: "latest",
+	imageTag: "latest-cuda",
 	ports: [
 		{
 			host: 8188,

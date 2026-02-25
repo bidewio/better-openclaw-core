@@ -9,7 +9,7 @@ export const calComDefinition: ServiceDefinition = {
 	icon: "📅",
 
 	image: "calcom/cal.com",
-	imageTag: "latest",
+	imageTag: "v2.6.1",
 	ports: [
 		{
 			host: 3005,

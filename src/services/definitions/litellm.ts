@@ -9,7 +9,7 @@ export const litellmDefinition: ServiceDefinition = {
 	icon: "🔀",
 
 	image: "ghcr.io/berriai/litellm",
-	imageTag: "main-latest",
+	imageTag: "v1.81.12-stable.1",
 	ports: [
 		{
 			host: 4000,

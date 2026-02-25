@@ -9,7 +9,7 @@ export const postgresqlDefinition: ServiceDefinition = {
 	icon: "🐘",
 
 	image: "postgres",
-	imageTag: "16-alpine",
+	imageTag: "17-alpine",
 	ports: [
 		{
 			host: 5432,

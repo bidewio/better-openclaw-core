@@ -9,7 +9,7 @@ export const traefikDefinition: ServiceDefinition = {
 	icon: "🔀",
 
 	image: "traefik",
-	imageTag: "v3.3",
+	imageTag: "v3.6.9",
 	ports: [
 		{
 			host: 80,

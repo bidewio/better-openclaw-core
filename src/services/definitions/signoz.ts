@@ -8,7 +8,7 @@ export const signozDefinition: ServiceDefinition = {
 	icon: "📈",
 
 	image: "signoz/signoz-frontend",
-	imageTag: "latest",
+	imageTag: "v0.76.3-msk-integration-ee",
 	ports: [
 		{
 			host: 3301,

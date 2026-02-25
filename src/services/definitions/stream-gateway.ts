@@ -9,7 +9,7 @@ export const streamGatewayDefinition: ServiceDefinition = {
 	icon: "📺",
 
 	image: "tiangolo/nginx-rtmp",
-	imageTag: "latest",
+	imageTag: "latest-2026-02-23",
 	ports: [
 		{
 			host: 1935,

@@ -9,7 +9,7 @@ export const weaviateDefinition: ServiceDefinition = {
 	icon: "🔷",
 
 	image: "semitechnologies/weaviate",
-	imageTag: "latest",
+	imageTag: "v1.36.0",
 	ports: [
 		{
 			host: 8082,

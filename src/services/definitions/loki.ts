@@ -9,7 +9,7 @@ export const lokiDefinition: ServiceDefinition = {
 	icon: "🪵",
 
 	image: "grafana/loki",
-	imageTag: "latest",
+	imageTag: "v3.6.7",
 	ports: [
 		{
 			host: 3100,

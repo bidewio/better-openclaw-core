@@ -8,7 +8,7 @@ export const scraplingDefinition: ServiceDefinition = {
 	icon: "🕷️",
 
 	image: "ghcr.io/d4vinci/scrapling",
-	imageTag: "latest",
+	imageTag: "v0.4",
 	ports: [
 		{
 			host: 8000,

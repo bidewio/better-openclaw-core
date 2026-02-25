@@ -9,7 +9,7 @@ export const dokployDefinition: ServiceDefinition = {
 	icon: "🚀",
 
 	image: "dokploy/dokploy",
-	imageTag: "latest",
+	imageTag: "v0.26.7",
 	ports: [
 		{
 			host: 3000,

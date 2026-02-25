@@ -8,7 +8,7 @@ export const hexstrikeDefinition: ServiceDefinition = {
 	icon: "⚔️",
 
 	image: "ghcr.io/0x4m4/hexstrike-ai",
-	imageTag: "latest",
+	imageTag: "v6.1",
 	ports: [
 		{
 			host: 8888,

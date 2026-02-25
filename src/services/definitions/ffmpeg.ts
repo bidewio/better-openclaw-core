@@ -9,7 +9,7 @@ export const ffmpegDefinition: ServiceDefinition = {
 	icon: "🎬",
 
 	image: "linuxserver/ffmpeg",
-	imageTag: "latest",
+	imageTag: "8.0.1-cli-ls58",
 	ports: [],
 	volumes: [
 		{

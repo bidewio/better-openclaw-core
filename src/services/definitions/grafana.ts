@@ -9,7 +9,7 @@ export const grafanaDefinition: ServiceDefinition = {
 	icon: "📊",
 
 	image: "grafana/grafana",
-	imageTag: "latest",
+	imageTag: "12.4.0",
 	ports: [
 		{
 			host: 3150,

@@ -9,7 +9,7 @@ export const mattermostDefinition: ServiceDefinition = {
 	icon: "💬",
 
 	image: "mattermost/mattermost-team-edition",
-	imageTag: "latest",
+	imageTag: "11.3.0-rc3",
 	ports: [
 		{
 			host: 8065,

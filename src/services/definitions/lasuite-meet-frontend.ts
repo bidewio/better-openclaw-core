@@ -9,7 +9,7 @@ export const lasuiteMeetFrontendDefinition: ServiceDefinition = {
 	icon: "🖥️",
 
 	image: "lasuite/meet-frontend",
-	imageTag: "latest",
+	imageTag: "v0.1.41",
 	ports: [
 		{ host: 8082, container: 8080, description: "Frontend HTTP", exposed: true },
 		{ host: 8083, container: 8083, description: "Frontend alternate (e.g. nginx)", exposed: true },

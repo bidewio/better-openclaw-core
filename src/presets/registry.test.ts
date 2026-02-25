@@ -18,6 +18,9 @@ describe("preset registry", () => {
 			"lasuite-meet-backend",
 			"lasuite-meet-frontend",
 			"lasuite-meet-agents",
+			"whisper",
+			"ollama",
+			"caddy",
 		]);
 		expect(preset!.skillPacks).toEqual([]);
 		expect(preset!.estimatedMemoryMB).toBe(2048);

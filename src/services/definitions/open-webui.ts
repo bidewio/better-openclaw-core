@@ -9,7 +9,7 @@ export const openWebuiDefinition: ServiceDefinition = {
 	icon: "💬",
 
 	image: "ghcr.io/open-webui/open-webui",
-	imageTag: "main",
+	imageTag: "v0.8.5",
 	ports: [
 		{
 			host: 3080,

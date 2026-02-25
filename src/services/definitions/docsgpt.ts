@@ -8,7 +8,7 @@ export const docsgptDefinition: ServiceDefinition = {
 	icon: "📄",
 
 	image: "arc53/docsgpt",
-	imageTag: "latest",
+	imageTag: "0.15.0",
 	ports: [
 		{
 			host: 7071,

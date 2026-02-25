@@ -9,7 +9,7 @@ export const usesendDefinition: ServiceDefinition = {
 	icon: "📧",
 
 	image: "usesend/usesend",
-	imageTag: "latest",
+	imageTag: "v1.7.7",
 	ports: [
 		{
 			host: 3000,

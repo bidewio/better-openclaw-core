@@ -9,7 +9,7 @@ export const crowdsecDefinition: ServiceDefinition = {
 	icon: "⚔️",
 
 	image: "crowdsecurity/crowdsec",
-	imageTag: "latest",
+	imageTag: "1.7.6",
 	ports: [
 		{
 			host: 8080,

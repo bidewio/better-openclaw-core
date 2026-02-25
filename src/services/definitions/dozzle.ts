@@ -9,7 +9,7 @@ export const dozzleDefinition: ServiceDefinition = {
 	icon: "📜",
 
 	image: "amir20/dozzle",
-	imageTag: "latest",
+	imageTag: "10.0.4",
 	ports: [
 		{
 			host: 9999,

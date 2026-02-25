@@ -8,7 +8,7 @@ export const nextcloudDefinition: ServiceDefinition = {
 	icon: "☁️",
 
 	image: "nextcloud",
-	imageTag: "latest",
+	imageTag: "32.0.6",
 	ports: [
 		{
 			host: 8080,

@@ -9,7 +9,7 @@ export const motionCanvasDefinition: ServiceDefinition = {
 	icon: "✨",
 
 	image: "motion-canvas/studio",
-	imageTag: "latest",
+	imageTag: "3.17.2",
 	ports: [
 		{
 			host: 9010,

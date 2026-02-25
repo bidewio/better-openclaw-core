@@ -9,7 +9,7 @@ export const matomoDefinition: ServiceDefinition = {
 	icon: "📊",
 
 	image: "matomo",
-	imageTag: "latest",
+	imageTag: "5.7.1",
 	ports: [
 		{
 			host: 8090,

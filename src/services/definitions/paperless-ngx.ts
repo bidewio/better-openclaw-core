@@ -9,7 +9,7 @@ export const paperlessNgxDefinition: ServiceDefinition = {
 	icon: "🗃️",
 
 	image: "ghcr.io/paperless-ngx/paperless-ngx",
-	imageTag: "latest",
+	imageTag: "2.20.8",
 	ports: [
 		{
 			host: 8010,

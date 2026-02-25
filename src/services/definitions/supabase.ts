@@ -8,7 +8,7 @@ export const supabaseDefinition: ServiceDefinition = {
 	icon: "⚡",
 
 	image: "supabase/studio",
-	imageTag: "latest",
+	imageTag: "2026.02.16-sha-26c615c",
 	ports: [
 		{
 			host: 3000,

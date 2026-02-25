@@ -9,7 +9,7 @@ export const redisDefinition: ServiceDefinition = {
 	icon: "🔴",
 
 	image: "redis",
-	imageTag: "7-alpine",
+	imageTag: "8-alpine",
 	ports: [
 		{
 			host: 6379,

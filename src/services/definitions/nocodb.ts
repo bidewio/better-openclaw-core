@@ -9,7 +9,7 @@ export const nocodbDefinition: ServiceDefinition = {
 	icon: "📊",
 
 	image: "nocodb/nocodb",
-	imageTag: "latest",
+	imageTag: "0.260",
 	ports: [
 		{
 			host: 8086,

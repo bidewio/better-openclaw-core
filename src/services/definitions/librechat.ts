@@ -9,7 +9,7 @@ export const librechatDefinition: ServiceDefinition = {
 	icon: "🗨️",
 
 	image: "ghcr.io/danny-avila/librechat",
-	imageTag: "latest",
+	imageTag: "chart-1.9.8",
 	ports: [
 		{
 			host: 3090,

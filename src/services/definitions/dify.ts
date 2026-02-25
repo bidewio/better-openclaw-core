@@ -9,7 +9,7 @@ export const difyDefinition: ServiceDefinition = {
 	icon: "🔮",
 
 	image: "langgenius/dify-api",
-	imageTag: "latest",
+	imageTag: "1.10.1-fix.1",
 	ports: [
 		{
 			host: 3110,

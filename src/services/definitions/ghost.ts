@@ -8,7 +8,7 @@ export const ghostDefinition: ServiceDefinition = {
 	icon: "👻",
 
 	image: "ghost",
-	imageTag: "latest",
+	imageTag: "6.19.2-alpine",
 	ports: [
 		{
 			host: 2368,

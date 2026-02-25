@@ -9,7 +9,7 @@ export const vaultwardenDefinition: ServiceDefinition = {
 	icon: "🔐",
 
 	image: "vaultwarden/server",
-	imageTag: "latest",
+	imageTag: "1.33.2-alpine",
 	ports: [
 		{
 			host: 80, // User should probably proxy this or change it to avoid conflicts

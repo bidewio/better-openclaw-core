@@ -9,7 +9,7 @@ export const claudeCodeDefinition: ServiceDefinition = {
 	icon: "🟣",
 
 	image: "ghcr.io/zeeno-atl/claude-code",
-	imageTag: "latest",
+	imageTag: "1.0",
 	ports: [],
 	volumes: [
 		{

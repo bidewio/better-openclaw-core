@@ -9,7 +9,7 @@ export const codexDefinition: ServiceDefinition = {
 	icon: "🟢",
 
 	image: "node",
-	imageTag: "22-alpine",
+	imageTag: "24-alpine",
 	ports: [],
 	volumes: [
 		{

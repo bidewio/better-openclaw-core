@@ -9,7 +9,7 @@ export const gotifyDefinition: ServiceDefinition = {
 	icon: "🔔",
 
 	image: "gotify/server",
-	imageTag: "latest",
+	imageTag: "2.17.0",
 	ports: [
 		{
 			host: 8083,

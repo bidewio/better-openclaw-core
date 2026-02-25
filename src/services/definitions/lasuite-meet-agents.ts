@@ -9,7 +9,7 @@ export const lasuiteMeetAgentsDefinition: ServiceDefinition = {
 	icon: "⚙️",
 
 	image: "lasuite/meet-agents",
-	imageTag: "main",
+	imageTag: "latest",
 	ports: [],
 	volumes: [],
 	environment: [],

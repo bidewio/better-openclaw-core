@@ -9,7 +9,7 @@ export const openpanelDefinition: ServiceDefinition = {
 	icon: "📉",
 
 	image: "ghcr.io/openpanel-dev/openpanel",
-	imageTag: "latest",
+	imageTag: "1.6.1",
 	ports: [
 		{
 			host: 3060,

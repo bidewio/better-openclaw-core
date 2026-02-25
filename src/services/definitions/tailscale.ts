@@ -9,7 +9,7 @@ export const tailscaleDefinition: ServiceDefinition = {
 	icon: "🔒",
 
 	image: "tailscale/tailscale",
-	imageTag: "latest",
+	imageTag: "stable",
 	ports: [],
 	volumes: [
 		{

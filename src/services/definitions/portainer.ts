@@ -8,7 +8,7 @@ export const portainerDefinition: ServiceDefinition = {
 	icon: "🐳",
 
 	image: "portainer/portainer-ce",
-	imageTag: "latest",
+	imageTag: "2.33.7",
 	ports: [
 		{
 			host: 9443,

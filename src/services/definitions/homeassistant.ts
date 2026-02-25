@@ -8,7 +8,7 @@ export const homeassistantDefinition: ServiceDefinition = {
 	icon: "🏠",
 
 	image: "ghcr.io/home-assistant/home-assistant",
-	imageTag: "stable",
+	imageTag: "2026.01.0",
 	ports: [
 		{
 			host: 8123,

@@ -1,8 +1,16 @@
 {
   "name": "@better-openclaw/core",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "private": false,
-  "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and more",
+  "description": "Core logic for better-openclaw: schemas, service registry, resolver, composer, validators and generators",
+  "author": "bidew.io <bachir@bidew.io>",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bidewio/better-openclaw.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://better-openclaw.dev",
   "packageManager": "pnpm@9.15.4",
   "sideEffects": false,
   "main": "dist/index.mjs",
@@ -12,11 +20,13 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.mjs"
     },
     "./*": {
       "types": "./dist/*.d.ts",
       "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs",
       "default": "./dist/*.mjs"
     }
   },
@@ -43,5 +53,16 @@
     "tsdown": "^0.20.3",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
-  }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "openclaw",
+    "docker-compose",
+    "service-registry",
+    "resolver",
+    "composer",
+    "ai-agent"
+  ]
 }

@@ -9,7 +9,7 @@ export const appflowyDefinition: ServiceDefinition = {
 	icon: "🍃",
 
 	image: "appflowyio/appflowy-cloud",
-	imageTag: "latest",
+	imageTag: "0.11.1",
 	ports: [
 		{
 			host: 8087,

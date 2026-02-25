@@ -9,7 +9,7 @@ export const whisperDefinition: ServiceDefinition = {
 	icon: "🎙️",
 
 	image: "fedirz/faster-whisper-server",
-	imageTag: "latest",
+	imageTag: "latest-cpu",
 	ports: [
 		{
 			host: 8001,

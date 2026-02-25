@@ -9,7 +9,7 @@ export const postizDefinition: ServiceDefinition = {
 	icon: "📨",
 
 	image: "ghcr.io/gitroomhq/postiz-app",
-	imageTag: "latest",
+	imageTag: "v2.19.0",
 	ports: [
 		{
 			host: 5200,

@@ -8,7 +8,7 @@ export const immichDefinition: ServiceDefinition = {
 	icon: "📸",
 
 	image: "ghcr.io/immich-app/immich-server",
-	imageTag: "release",
+	imageTag: "v1.98.2",
 	ports: [
 		{
 			host: 2283,

@@ -9,7 +9,7 @@ export const ntfyDefinition: ServiceDefinition = {
 	icon: "📣",
 
 	image: "binwiederhier/ntfy",
-	imageTag: "latest",
+	imageTag: "v2.17.0",
 	ports: [
 		{
 			host: 8084,

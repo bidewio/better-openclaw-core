@@ -55,7 +55,7 @@ describe("compose", () => {
 		expect(parsed.services).toHaveProperty("redis");
 
 		// Redis service should have correct image
-		expect(parsed.services.redis.image).toBe("redis:7-alpine");
+		expect(parsed.services.redis.image).toBe("redis:8-alpine");
 
 		// Gateway depends_on should include redis with service_healthy (redis has healthcheck)
 		expect(parsed.services["openclaw-gateway"].depends_on).toHaveProperty("redis");

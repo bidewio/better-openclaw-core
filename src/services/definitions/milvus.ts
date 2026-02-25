@@ -9,7 +9,7 @@ export const milvusDefinition: ServiceDefinition = {
 	icon: "🗄️",
 
 	image: "milvusdb/milvus",
-	imageTag: "latest",
+	imageTag: "v2.6.10",
 	command: "milvus run standalone",
 	ports: [
 		{

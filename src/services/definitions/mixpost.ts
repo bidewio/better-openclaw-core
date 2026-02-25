@@ -9,7 +9,7 @@ export const mixpostDefinition: ServiceDefinition = {
 	icon: "📮",
 
 	image: "inovector/mixpost",
-	imageTag: "latest",
+	imageTag: "2.4.0",
 	ports: [
 		{
 			host: 9191,

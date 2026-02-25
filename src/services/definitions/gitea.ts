@@ -9,7 +9,7 @@ export const giteaDefinition: ServiceDefinition = {
 	icon: "🍵",
 
 	image: "gitea/gitea",
-	imageTag: "latest",
+	imageTag: "1.25.4",
 	ports: [
 		{
 			host: 3130,

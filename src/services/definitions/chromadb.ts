@@ -9,7 +9,7 @@ export const chromadbDefinition: ServiceDefinition = {
 	icon: "🎨",
 
 	image: "chromadb/chroma",
-	imageTag: "latest",
+	imageTag: "1.5.1",
 	ports: [
 		{
 			host: 8000,

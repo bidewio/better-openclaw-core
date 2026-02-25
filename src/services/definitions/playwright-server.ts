@@ -9,7 +9,7 @@ export const playwrightServerDefinition: ServiceDefinition = {
 	icon: "🎭",
 
 	image: "mcr.microsoft.com/playwright",
-	imageTag: "latest",
+	imageTag: "v1.58.2-noble",
 	ports: [
 		{
 			host: 3040,

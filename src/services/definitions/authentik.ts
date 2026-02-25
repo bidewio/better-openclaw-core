@@ -8,7 +8,7 @@ export const authentikDefinition: ServiceDefinition = {
 	icon: "🛡️",
 
 	image: "ghcr.io/goauthentik/server",
-	imageTag: "latest",
+	imageTag: "2026.2.0",
 	ports: [
 		{
 			host: 9000,

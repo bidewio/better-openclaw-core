@@ -9,7 +9,7 @@ export const searxngDefinition: ServiceDefinition = {
 	icon: "🔍",
 
 	image: "searxng/searxng",
-	imageTag: "latest",
+	imageTag: "2026.2.23-4964d664f",
 	ports: [
 		{
 			host: 8080,

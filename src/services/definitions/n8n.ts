@@ -9,7 +9,7 @@ export const n8nDefinition: ServiceDefinition = {
 	icon: "🔄",
 
 	image: "docker.n8n.io/n8nio/n8n",
-	imageTag: "latest",
+	imageTag: "1.123.21",
 	ports: [
 		{
 			host: 5678,

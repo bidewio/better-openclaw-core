@@ -9,7 +9,7 @@ export const desktopEnvironmentDefinition: ServiceDefinition = {
 	icon: "🖥️",
 
 	image: "kasmweb/core-ubuntu-jammy",
-	imageTag: "1.16.0",
+	imageTag: "1.18.0",
 	ports: [
 		{
 			host: 6901,

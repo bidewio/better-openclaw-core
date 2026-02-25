@@ -7,7 +7,7 @@ export const headscaleDefinition: ServiceDefinition = {
     category: "dev-tools",
     icon: "🌐",
     image: "headscale/headscale",
-    imageTag: "latest",
+    imageTag: "v0.27.1",
     command: "headscale serve",
     ports: [
         {
