@@ -1,6 +1,6 @@
+import * as yaml from "yaml";
 import { generate } from "./generate.js";
 import { getAllPresets } from "./presets/registry.js";
-import * as yaml from "yaml";
 
 const allPresets = getAllPresets();
 
@@ -49,9 +49,7 @@ describe("docker compose config integration tests", () => {
 					// We just verify that if restart is set, it is a valid value.
 					if (svc.restart !== undefined) {
 						expect(
-							["always", "unless-stopped", "on-failure", "no"].includes(
-								svc.restart as string,
-							),
+							["always", "unless-stopped", "on-failure", "no"].includes(svc.restart as string),
 							`service "${name}" has invalid restart policy: ${svc.restart}`,
 						).toBe(true);
 					}

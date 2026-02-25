@@ -1,7 +1,7 @@
-import { getAllPresets, getPresetById } from "../presets/registry.js";
-import { generate } from "../generate.js";
-import { resolve } from "../resolver.js";
 import * as yaml from "yaml";
+import { generate } from "../generate.js";
+import { getAllPresets, getPresetById } from "../presets/registry.js";
+import { resolve } from "../resolver.js";
 
 const allPresets = getAllPresets();
 

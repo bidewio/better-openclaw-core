@@ -9,7 +9,7 @@ export const browserlessDefinition: ServiceDefinition = {
 	icon: "🌐",
 
 	image: "browserless/chrome",
-	imageTag: "2.21.0",
+	imageTag: "latest",
 	ports: [
 		{
 			host: 3010,

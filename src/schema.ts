@@ -233,6 +233,8 @@ export const GenerationInputSchema = z.object({
 	aiProviders: z.array(AiProviderSchema).default([]),
 	gsdRuntimes: z.array(GsdRuntimeSchema).default([]),
 	proxy: ProxyTypeSchema.default("none"),
+	proxyHttpPort: z.number().int().min(1).max(65535).optional(),
+	proxyHttpsPort: z.number().int().min(1).max(65535).optional(),
 	domain: z.string().optional(),
 	gpu: z.boolean().default(false),
 	platform: PlatformSchema.default("linux/amd64"),
