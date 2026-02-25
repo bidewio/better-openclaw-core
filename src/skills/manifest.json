@@ -1429,6 +1429,14 @@
       "services": [
         "pentestagent"
       ]
+    },
+    {
+      "id": "headscale-network",
+      "path": "headscale-network/SKILL.md",
+      "emoji": "🌐",
+      "services": [
+        "headscale"
+      ]
     }
   ]
 }

@@ -26,6 +26,7 @@ export { ghostDefinition } from "./ghost.js";
 export { giteaDefinition } from "./gitea.js";
 export { gotifyDefinition } from "./gotify.js";
 export { grafanaDefinition } from "./grafana.js";
+export { headscaleDefinition } from "./headscale.js";
 export { hexstrikeDefinition } from "./hexstrike.js";
 export { homeassistantDefinition } from "./homeassistant.js";
 export { immichDefinition } from "./immich.js";
@@ -121,6 +122,7 @@ import { ghostDefinition } from "./ghost.js";
 import { giteaDefinition } from "./gitea.js";
 import { gotifyDefinition } from "./gotify.js";
 import { grafanaDefinition } from "./grafana.js";
+import { headscaleDefinition } from "./headscale.js";
 import { hexstrikeDefinition } from "./hexstrike.js";
 import { homeassistantDefinition } from "./homeassistant.js";
 import { immichDefinition } from "./immich.js";
@@ -281,4 +283,5 @@ export const allServiceDefinitions: ServiceDefinition[] = [
 	solidityGuardDefinition,
 	pentagiDefinition,
 	pentestagentDefinition,
+	headscaleDefinition,
 ];
