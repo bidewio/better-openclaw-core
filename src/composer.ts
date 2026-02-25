@@ -170,7 +170,25 @@ function buildCompanionService(
 		const prefix = def.id.toUpperCase().replace(/-/g, "_");
 		svc.ports = exposedPorts.map((p, i) => {
 			const suffix = exposedPorts.length > 1 ? `_${i}` : "";
-			return `\${${prefix}_PORT${suffix}:-${p.host}}:${p.container}`;
+			let defaultPort = p.host;
+
+			// Override proxy ports if custom ports are specified
+			if (
+				(def.id === "caddy" || def.id === "traefik") &&
+				options.proxyHttpPort !== undefined &&
+				p.container === 80
+			) {
+				defaultPort = options.proxyHttpPort;
+			}
+			if (
+				(def.id === "caddy" || def.id === "traefik") &&
+				options.proxyHttpsPort !== undefined &&
+				p.container === 443
+			) {
+				defaultPort = options.proxyHttpsPort;
+			}
+
+			return `\${${prefix}_PORT${suffix}:-${defaultPort}}:${p.container}`;
 		});
 	}
 

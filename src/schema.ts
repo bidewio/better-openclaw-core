@@ -38,7 +38,7 @@ export const PlatformSchema = z.enum([
 /** Platform for Docker image arch only (used by resolver/compose). */
 export const ComposePlatformSchema = z.enum(["linux/amd64", "linux/arm64"]);
 
-export const DeploymentTypeSchema = z.enum(["docker", "bare-metal"]);
+export const DeploymentTypeSchema = z.enum(["docker", "bare-metal", "local"]);
 
 export const RestartPolicySchema = z.enum(["unless-stopped", "always", "on-failure", "no"]);
 
@@ -254,6 +254,8 @@ export const ResolvedServiceSchema = z.object({
 
 export const AddedDependencySchema = z.object({
 	service: z.string(),
+	serviceId: z.string().optional(),
+	requiredBy: z.string().optional(),
 	reason: z.string(),
 });
 
@@ -284,6 +286,8 @@ export const ResolverOutputSchema = z.object({
 export const ComposeOptionsSchema = z.object({
 	projectName: z.string(),
 	proxy: ProxyTypeSchema.default("none"),
+	proxyHttpPort: z.number().int().min(1).max(65535).optional(),
+	proxyHttpsPort: z.number().int().min(1).max(65535).optional(),
 	domain: z.string().optional(),
 	gpu: z.boolean().default(false),
 	platform: PlatformSchema.default("linux/amd64"),

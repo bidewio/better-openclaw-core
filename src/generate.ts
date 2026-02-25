@@ -91,6 +91,8 @@ export function generate(rawInput: GenerationInput): GenerationResult {
 	const composeOptions = {
 		projectName: input.projectName,
 		proxy: input.proxy,
+		proxyHttpPort: input.proxyHttpPort,
+		proxyHttpsPort: input.proxyHttpsPort,
 		domain: input.domain,
 		gpu: input.gpu,
 		platform: composePlatform,

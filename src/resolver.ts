@@ -132,6 +132,8 @@ export function resolve(input: ResolverInput): ResolverOutput {
 					serviceAddedBy.set(reqId, "dependency");
 					addedDependencies.push({
 						service: reqId,
+						serviceId: reqId,
+						requiredBy: def.name,
 						reason: `Required by ${def.name}`,
 					});
 					changed = true;
